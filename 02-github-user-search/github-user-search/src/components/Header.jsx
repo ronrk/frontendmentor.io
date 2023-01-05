@@ -8,7 +8,7 @@ const Header = ({ onToggleMode, dark }) => {
     <Wrapper>
       <h1 className="text-dark fs-500">devfinder</h1>
       <button className="btn--mode text-primary" onClick={onToggleMode}>
-        {dark ? "light" : "dark"}{" "}
+        {dark ? "light" : "dark"}
         {dark ? <LightIcon className="icon" /> : <DarkIcon className="icon" />}
       </button>
     </Wrapper>

@@ -30,6 +30,7 @@ const ContentStyled = styled.section`
   & .date {
     grid-area: date;
     align-self: center;
+    justify-self: end;
   }
   & .stats-container {
     grid-area: stats;
@@ -42,19 +43,25 @@ const ContentStyled = styled.section`
     grid-area: info;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
+    column-gap: 1.5rem;
     & > * {
       display: flex;
       align-items: center;
       gap: 1rem;
       cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.unavaible {
+        cursor: not-allowed;
+        opacity: 0.5;
+        &:hover {
+          text-decoration: none;
+        }
+      }
 
       & .icon {
         fill: currentColor;
-      }
-
-      &:hover {
-        text-decoration: underline;
       }
     }
   }

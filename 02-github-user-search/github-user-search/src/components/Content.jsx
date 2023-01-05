@@ -6,57 +6,103 @@ import { WebsiteIcon } from "../assets/icons";
 import { CompanyIcon } from "../assets/icons";
 import img from "../assets/Oval.png";
 
-const Content = () => {
+const Content = ({ loading, user }) => {
+  if (loading) {
+    return <div>loading...</div>;
+  }
+
+  if (!user) {
+    return;
+  }
+
+  const {
+    name,
+    login,
+    created_at,
+    bio,
+    followers,
+    avatar_url,
+    following,
+    location,
+    public_repos,
+    company,
+    twitter_username,
+    blog,
+  } = user;
+
+  const date = new Date(created_at);
+  console.log();
+
   return (
     <Wrapper className="box-bg">
       <img className="user-img" src={img} alt="" />
       <div className="user-name">
-        <h2 className="fs-400 text-dark">NAME</h2>
-        <span className="fs-200 text-primary">@username</span>
+        <h2 className="fs-400 text-dark">{name ? name : login}</h2>
+        <span className="fs-200 text-primary">@{login}</span>
       </div>
-      <div className="date fs-200 text-light">Date</div>
+      <div className="date fs-200 text-light">
+        {date.toLocaleDateString("en")}
+      </div>
       <p className="description text-light">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nihil
-        fugit inventore, veniam sed error quibusdam voluptas quis omnis dolorem.
+        {bio
+          ? bio
+          : `Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nihil
+        fugit inventore, veniam sed error quibusdam voluptas quis omnis dolorem.`}
       </p>
       <div className="stats-container app-bg">
         <div className="stats">
           <h3 className="text-light fs-200 fw-l">Repos</h3>
-          <p className="text-dark fs-300 fw-b">8</p>
+          <p className="text-dark fs-300 fw-b">{public_repos}</p>
         </div>
         <div className="stats">
           <h3 className="text-light fs-200 fw-l">Followers</h3>
-          <p className="text-dark fs-300 fw-b">2133</p>
+          <p className="text-dark fs-300 fw-b">{followers}</p>
         </div>
         <div className="stats">
           <h3 className="text-light fs-200 fw-l">Following</h3>
-          <p className="text-dark fs-300 fw-b">213</p>
+          <p className="text-dark fs-300 fw-b">{following}</p>
         </div>
       </div>
       <div className="user-info">
-        <div className="text-light fs-300">
+        <div
+          className={
+            location ? "text-light fs-200" : "text-light fs-200 unavaible"
+          }
+        >
           <span>
             <LocationIcon className="icon" />
           </span>
-          <p>location</p>
+          <p>{location || "unavaible"}</p>
         </div>
-        <div className="text-light fs-300">
+        <div
+          className={
+            twitter_username
+              ? "text-light fs-200"
+              : "text-light fs-200 unavaible"
+          }
+        >
           <span>
             <TwitterIcon className="icon" />
           </span>
-          <p>twitter</p>
+          <p>{twitter_username || "unavaible"}</p>
         </div>
-        <div className="text-light fs-300">
+        <div
+          className={blog ? "text-light fs-200" : "text-light fs-200 unavaible"}
+        >
           <span>
             <WebsiteIcon className="icon" />
           </span>
-          <p>website</p>
+          <p>{blog || "unavaible"}</p>
         </div>
-        <div className="text-light fs-300">
+        <div
+          className={
+            company ? "text-light fs-200" : "text-light fs-200 unavaible"
+          }
+        >
           <span>
             <CompanyIcon className="icon" />
           </span>
-          <p>company</p>
+          <p>{company || "unavaible"}</p>
         </div>
       </div>
     </Wrapper>
