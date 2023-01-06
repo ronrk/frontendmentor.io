@@ -6,7 +6,7 @@
 
 https://dazzling-lamington-125cde.netlify.app/
 
-## Web app to find and see basic user information & stats.
+## Web app to generate random password depend on certain filters.
 
 ## used:
 
