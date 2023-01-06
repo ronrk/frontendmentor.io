@@ -6,7 +6,7 @@ import { LightIcon } from "../assets/icons";
 const Header = ({ onToggleMode, dark }) => {
   return (
     <Wrapper>
-      <h1 className="text-dark fs-500">devfinder</h1>
+      <h1 className="text-dark fs-700">devfinder</h1>
       <button className="btn--mode text-primary" onClick={onToggleMode}>
         {dark ? "light" : "dark"}
         {dark ? <LightIcon className="icon" /> : <DarkIcon className="icon" />}

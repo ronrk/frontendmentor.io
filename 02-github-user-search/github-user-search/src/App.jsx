@@ -16,7 +16,7 @@ const App = () => {
   const getGithubUserByUsername = async (username) => {
     setError({ status: false, message: "" });
     setLoading(true);
-    setUser(null);
+    // setUser(null);
     try {
       const res = await fetch(`https://api.github.com/users/${username}`);
       if (res.status === 404) {
@@ -40,7 +40,11 @@ const App = () => {
     <div className={`app app-bg ${dark ? "dark" : null}`}>
       <main className="container">
         <Header onToggleMode={toggleDarkMode} dark={dark} />
-        <SearchBar onSearch={getGithubUserByUsername} error={error} />
+        <SearchBar
+          onSearch={getGithubUserByUsername}
+          error={error}
+          setError={setError}
+        />
         <Content loading={loading} user={user} />
       </main>
     </div>

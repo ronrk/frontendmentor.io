@@ -10,12 +10,9 @@ const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
     gap: 1em;
-    font-size: 1.3rem;
-    padding: 0.7em;
-    border-radius: 9px;
     text-transform: uppercase;
     color: var(--clr-light);
-    font-size: var(--fs-200);
+    font-size: 0.8125rem;
 
     & .icon {
       fill: currentColor;
