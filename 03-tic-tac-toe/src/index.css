@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
+
+:root {
+  --ff: "Outfit", sans-serif;
+
+  --clr-primary-dark: #31c3bd;
+  --clr-primary-light: #65e9e4;
+  --clr-secondary-dark: #f2b137;
+  --clr-secondary-light: #ffc860;
+  --clr-blue-dark: #1a2a33;
+  --clr-blue-light: #1f3641;
+  --clr-gray-dark: #a8bfc9;
+  --clr-gray-light: #dbe8ed;
+
+  --fs-500: 2.5rem;
+  --fs-400: 1.5rem;
+  --fs-300: 1.25rem;
+  --fs-200: 1rem;
+  --fs-100: 0.875rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: block;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff);
+}
+
+.icon-player {
+  max-width: 40px;
+  max-height: 40px;
+}
+.game-start-page .icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.board {
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+}
+
+.squere {
+  flex: 33%;
+  height: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: black;
+}
+.squere:active {
+  background-color: #64f4c4;
+}
+
+/* ////// */
+/* UTILS */
+/* ///// */
+/* Background */
+/* ////////// */
+.bg-primary-dark {
+  background-color: var(--clr-primary-dark);
+}
+.bg-primary-light {
+  background-color: var(--clr-primary-light);
+}
+.bg-secondary-dark {
+  background-color: var(--clr-secondary-dark);
+}
+.bg-secondary-light {
+  background-color: var(--clr-secondary-light);
+}
+.bg-blue-dark {
+  background-color: var(--clr-blue-dark);
+}
+.bg-blue-light {
+  background-color: var(--clr-blue-light);
+}
+.bg-gray-dark {
+  background-color: var(--clr-gray-dark);
+}
+.bg-gray-light {
+  background-color: var(--clr-gray-light);
+}
+/* FONT-COLOR */
+/* ////////// */
+.text-primary-dark {
+  color: var(--clr-primary-dark);
+}
+.text-primary-light {
+  color: var(--clr-primary-light);
+}
+.text-secondary-dark {
+  color: var(--clr-secondary-dark);
+}
+.text-secondary-light {
+  color: var(--clr-secondary-light);
+}
+.text-blue-dark {
+  color: var(--clr-blue-dark);
+}
+.text-blue-light {
+  color: var(--clr-blue-light);
+}
+.text-gray-dark {
+  color: var(--clr-gray-dark);
+}
+.text-gray-light {
+  color: var(--clr-gray-light);
+}
+/* FONT-SIZE */
+/* ////////// */
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
+/* CLASSES */
+/* /////// */
+.fw-b {
+  font-weight: 700;
+}
+.fw-l {
+  font-weight: 500;
+}
+.text-to-center {
+  text-align: center;
+}
+.uppercase {
+  text-transform: uppercase;
+}
