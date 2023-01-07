@@ -4,7 +4,7 @@
 
 ### Live Preview:
 
-https://dazzling-lamington-125cde.netlify.app/
+https://jolly-longma-c6958e.netlify.app/
 
 ## Web app tic-tac-toe Game.
 
