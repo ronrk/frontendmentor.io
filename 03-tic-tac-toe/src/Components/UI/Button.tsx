@@ -13,19 +13,28 @@ const Button = styled.button<IProps>`
   text-align: center;
   background: ${({ primary, secondary, blue, gray }) =>
     primary
-      ? "var(--clr-primary-dark)"
+      ? "var(--clr-primary-light)"
       : secondary
-      ? "var(--clr-secondary-dark)"
+      ? "var(--clr-secondary-light)"
       : blue
-      ? "var(--clr-blue-dark)"
+      ? "var(--clr-blue-light)"
       : gray
-      ? "var(--clr-gray-dark)"
+      ? "var(--clr-gray-light)"
       : "transparent"};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "")};
   border-radius: 5px;
-  box-shadow: inset 0px -8px 0px ${({ primary, secondary, gray, blue }) => (primary ? "#31C3BD" : secondary ? "#F2B137" : gray ? "6B8997" : blue ? "" : "")};
-  padding: 0.5em 2em;
-  text-transform: ${({ uppercase }) => (uppercase ? "uppercase" : "")};
+  box-shadow: var(--shadow)
+    ${({ primary, secondary, blue, gray }) =>
+      primary
+        ? "var(--clr-primary-dark)"
+        : secondary
+        ? "var(--clr-secondary-dark)"
+        : blue
+        ? "var(--clr-blue-dark)"
+        : gray
+        ? "var(--clr-gray-dark)"
+        : "transparent"};
+  padding: 1em 2em;
   transition: all 0.2s;
   &:hover {
     filter: brightness(120%);

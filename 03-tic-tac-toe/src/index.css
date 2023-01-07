@@ -17,6 +17,8 @@
   --fs-300: 1.25rem;
   --fs-200: 1rem;
   --fs-100: 0.875rem;
+
+  --shadow: inset 0px -8px 0px;
 }
 
 html {
@@ -28,6 +30,7 @@ html {
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
 
 button {
@@ -50,40 +53,6 @@ button {
 .icon-player {
   max-width: 40px;
   max-height: 40px;
-}
-.game-start-page .icons-container {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.board {
-  width: 500px;
-  height: 500px;
-  background-color: aquamarine;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  flex: 33%;
-  display: flex;
-  flex-direction: row;
-}
-
-.squere {
-  flex: 33%;
-  height: 100%;
-  border: 1px solid black;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  color: black;
-}
-.squere:active {
-  background-color: #64f4c4;
 }
 
 /* ////// */
@@ -158,6 +127,23 @@ button {
 .fs-100 {
   font-size: var(--fs-100);
 }
+/* FONT-SIZE */
+/* ////////// */
+.letter-space-1 {
+  letter-spacing: 0.8px;
+}
+.letter-space-2 {
+  letter-spacing: 1px;
+}
+.letter-space-3 {
+  letter-spacing: 1.25px;
+}
+.letter-space-4 {
+  letter-spacing: 1.5px;
+}
+.letter-space-5 {
+  letter-spacing: 2.5px;
+}
 /* CLASSES */
 /* /////// */
 .fw-b {
@@ -171,4 +157,22 @@ button {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.flex {
+  display: flex;
+  gap: var(--gap, 2rem);
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 2rem);
+}
+.container {
+  width: 100%;
+  max-width: 750px;
+  /* min-width: 45vw; */
+  padding-inline: var(--container-gap, 1rem);
+
+  border-radius: 6px;
+  /* margin-inline: auto; */
 }
