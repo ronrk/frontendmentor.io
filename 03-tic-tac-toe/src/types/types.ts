@@ -23,7 +23,7 @@ export type TPlayer = "x" | "o";
 
 export interface IGameContext {
   gameStatus: IGameStatus;
-  gameStats: IGameStats | undefined;
+  gameStats: IGameStats;
   curPlayer: "player1" | "player2";
   choosePlayer1Type: (player: TPlayer | string) => void;
   changePlayer: () => void;
