@@ -11,5 +11,11 @@ export default function Home() {
       router.push("/Mercury");
     }
   }, [router]);
-  return <></>;
+  return (
+    <>
+      <Head>
+        <title>Planets Facts</title>
+      </Head>
+    </>
+  );
 }
