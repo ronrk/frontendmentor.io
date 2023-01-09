@@ -20,7 +20,7 @@ const helperArr: IHelper[] = [
 const PlanetsTabs: FC<IProps> = ({ onClick, curActive }) => {
   return (
     <div className="planet-tabs flex">
-      {helperArr.map((btn) => (
+      {helperArr.map((btn, idx) => (
         <button
           key={btn.id}
           onClick={() => onClick(btn.id)}
@@ -30,7 +30,7 @@ const PlanetsTabs: FC<IProps> = ({ onClick, curActive }) => {
               : "tab ff-spartan fs-600 uppercase"
           }`}
         >
-          {btn.label}
+          <span className="tab-indicator">0{idx + 1}</span> {btn.label}
         </button>
       ))}
     </div>

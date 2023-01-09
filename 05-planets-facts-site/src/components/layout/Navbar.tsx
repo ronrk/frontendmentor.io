@@ -4,33 +4,38 @@ import { useRouter } from "next/router";
 import Wrapper from "./Navbar.styled";
 import { data } from "../../utils";
 import { MenuIcon } from "../ui/icons";
+import { FC } from "react";
 
-const Navbar = () => {
+interface IProps {
+  handleMenu: () => void;
+}
+
+const Navbar: FC<IProps> = ({ handleMenu }) => {
   const { query } = useRouter();
   return (
-    <Wrapper className="flex">
-      <h1 className="text-white ff-antonio fw-500 line-h2 fs-700">
+    <Wrapper className="flex-col">
+      <div className="logo text-white ff-antonio fw-500 line-h2 fs-700">
         The Planets
-      </h1>
+      </div>
       <nav>
-        <ul className="nav-list flex">
+        <ul className="navlist flex">
           {data.map((planet) => (
-            <li key={planet.name}>
+            <li key={planet.slug}>
               <Link
-                href={`/${planet.name}`}
+                href={`/${planet.slug}`}
                 className={
-                  planet.name === query?.planet
+                  planet.slug === query?.slug
                     ? "active navlink uppercase ff-spartan fs-600"
                     : "navlink uppercase ff-spartan fs-600"
                 }
               >
-                {planet.name}
+                {planet.slug}
               </Link>
             </li>
           ))}
         </ul>
       </nav>
-      <button className="menu-icon">
+      <button className="menu-icon" onClick={handleMenu}>
         <MenuIcon />
       </button>
     </Wrapper>

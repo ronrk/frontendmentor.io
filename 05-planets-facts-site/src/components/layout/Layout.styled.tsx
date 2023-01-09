@@ -5,6 +5,10 @@ const LayoutWrapper = styled.div`
   background: var(--clr-black);
   z-index: 1;
 
+  & .main {
+    display: grid;
+    place-items: center;
+  }
   & .bg {
     position: absolute;
     z-index: -1;

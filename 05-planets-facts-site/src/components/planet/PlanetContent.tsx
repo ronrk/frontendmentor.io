@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
+import { IconSrc } from "../ui/icons";
+
 interface IProps {
   name: string;
   curContext: string;
@@ -22,6 +24,7 @@ const PlanetContent: FC<IProps> = ({ name, context, curContext, srcUrl }) => {
           className="src-link ff-spartan fs-600"
         >
           Wikipedia
+          <IconSrc />
         </Link>
       </span>
     </div>

@@ -2,7 +2,8 @@ import { IPlanet } from "./types/IPlanet";
 
 export const data: IPlanet[] = [
   {
-    name: "Mercury",
+    slug: "Mercury",
+    path: "/mercury",
     content: {
       overview: `Mercury is the smallest planet in the Solar System and the closest 
 to the Sun. Its orbit around the Sun takes 87.97 Earth days, the 
@@ -24,7 +25,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "430°c",
   },
   {
-    name: "Venus",
+    slug: "Venus",
+    path: "/venus",
     content: {
       overview: `Venus is the second planet from the Sun. It is named after the 
       Roman goddess of love and beauty. As the brightest natural object 
@@ -46,7 +48,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "471°c",
   },
   {
-    name: "Earth",
+    slug: "Earth",
+    path: "/earth",
     content: {
       overview: `Third planet from the Sun and the only known planet to harbor life. 
       About 29.2% of Earth's surface is land with remaining 70.8% is 
@@ -68,7 +71,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "16°c",
   },
   {
-    name: "Mars",
+    slug: "Mars",
+    path: "/mars",
     content: {
       overview: `Mars is the fourth planet from the Sun and the second-smallest planet 
       in the Solar System, being larger than only Mercury. In English, Mars 
@@ -90,7 +94,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "-28°c",
   },
   {
-    name: "Jupiter",
+    slug: "Jupiter",
+    path: "/jupiter",
     content: {
       overview: `Jupiter is the fifth planet from the Sun and the largest in the Solar System. 
       It is a gas giant with a mass two and a half times that of all the other 
@@ -111,7 +116,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "-108°c",
   },
   {
-    name: "Saturn",
+    slug: "Saturn",
+    path: "/saturn",
     content: {
       overview: `Saturn is the sixth planet from the Sun and the second-largest in the Solar 
       System, after Jupiter. It is a gas giant with an average radius of about 
@@ -133,7 +139,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "-138°c",
   },
   {
-    name: "Uranus",
+    slug: "Uranus",
+    path: "/uranus",
     content: {
       overview: `Uranus is the seventh planet from the Sun. Its name is a reference to the 
       Greek god of the sky, Uranus according to Greek mythology, was the great-grandfather 
@@ -154,7 +161,8 @@ planets in the Solar System, and is a rocky body like Earth.`,
     avgTemp: "-195°c",
   },
   {
-    name: "Neptune",
+    slug: "Neptune",
+    path: "/neptune",
     content: {
       overview: `Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar 
       System, it is the fourth-largest planet by diameter, the third-most-massive planet, 

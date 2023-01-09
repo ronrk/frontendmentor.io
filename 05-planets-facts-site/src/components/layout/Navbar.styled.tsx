@@ -6,6 +6,21 @@ const NavbarWrapper = styled.header`
   justify-content: space-between;
   padding: 1.5rem 2rem;
 
+  & .logo {
+    white-space: nowrap;
+  }
+
+  & nav {
+    width: 100%;
+    --gap: 1em;
+  }
+
+  & .navlist {
+    /* width: 100%; */
+    /* align-self: stretch; */
+    justify-content: space-evenly;
+  }
+
   & .navlink {
     letter-spacing: 0.1em;
     color: hsla(var(--clr-white), 0.6);
@@ -15,12 +30,23 @@ const NavbarWrapper = styled.header`
     &:hover {
       color: hsl(var(--clr-white));
     }
+    &.active {
+      font-size: 1em;
+    }
   }
   & .menu-icon {
     display: none;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (min-width: 950px) {
+    flex-direction: row;
+    & nav {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 534px) {
+    flex-direction: row;
     & ul {
       display: none;
     }
