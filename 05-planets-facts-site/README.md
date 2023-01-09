@@ -37,7 +37,7 @@ Users should be able to:
 
 - [Next.js](https://nextjs.org/) - React framework
 - [React](https://reactjs.org/) - JS library
-  Typescript
+-Typescript
 - [Styled Components](https://styled-components.com/) - For styles
 - CSS modules - For styles
 - Semantic HTML5 markup
