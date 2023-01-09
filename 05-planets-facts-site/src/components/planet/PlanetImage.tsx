@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { FC, useEffect, useState } from "react";
 import { TContent } from "../../types/IPlanet";
+import Wrapper from "./PlanetImage.styled";
 interface IProps {
   name: string;
   curContext: TContent;
@@ -16,7 +17,7 @@ const PlanetImage: FC<IProps> = ({ name, curContext }) => {
 
   imagePath += ".svg";
   return (
-    <div className="planet-image">
+    <Wrapper>
       <Image src={imagePath} alt={name} fill />
 
       {curContext === "surface" ? (
@@ -28,7 +29,7 @@ const PlanetImage: FC<IProps> = ({ name, curContext }) => {
           />
         </div>
       ) : null}
-    </div>
+    </Wrapper>
   );
 };
 

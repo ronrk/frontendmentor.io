@@ -6,9 +6,7 @@ import PlanetImage from "../../src/components/planet/PlanetImage";
 import PlanetInfo from "../../src/components/planet/PlanetInfo";
 import PlanetsTabs from "../../src/components/planet/PlanetsTabs";
 import { IPlanet, TContent } from "../../src/types/IPlanet";
-
-import Wrapper from "../../styles/PlanetPage.styled";
-import MenuNav from "../../src/components/layout/MenuNav";
+import classes from "../../styles/PlanetPage.module.css";
 
 interface IProp {
   planet: IPlanet;
@@ -30,7 +28,7 @@ const PlanetPage: FC<IProp> = ({ planet, context }) => {
     planet;
 
   return (
-    <Wrapper className={slug}>
+    <section className={`${classes.planet_page} ${slug}`}>
       <PlanetImage name={slug} curContext={curContext} />
       <PlanetContent
         name={slug}
@@ -45,7 +43,7 @@ const PlanetPage: FC<IProp> = ({ planet, context }) => {
         rotation={rotation}
         avgTemp={avgTemp}
       />
-    </Wrapper>
+    </section>
   );
 };
 

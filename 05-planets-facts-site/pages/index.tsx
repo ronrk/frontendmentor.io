@@ -1,18 +1,15 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-    <>
-      <div>HomePage</div>
-    </>
-  );
-}
-
-export async function getStaticProps() {
-  return {
-    redirect: {
-      destination: "/Mercury",
-      permanent: false,
-    },
-  };
+  const router = useRouter();
+  useEffect(() => {
+    if (router.pathname === "/") {
+      router.push("/Mercury");
+    }
+  }, [router]);
+  return <></>;
 }

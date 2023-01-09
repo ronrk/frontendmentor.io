@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import { TContent } from "../../types/IPlanet";
 
+import Wrapper from "./PlanetTabs.styled";
+
 interface IHelper {
   label: string;
   id: TContent;
@@ -19,7 +21,7 @@ const helperArr: IHelper[] = [
 
 const PlanetsTabs: FC<IProps> = ({ onClick, curActive }) => {
   return (
-    <div className="planet-tabs flex">
+    <Wrapper className="flex">
       {helperArr.map((btn, idx) => (
         <button
           key={btn.id}
@@ -33,7 +35,7 @@ const PlanetsTabs: FC<IProps> = ({ onClick, curActive }) => {
           <span className="tab-indicator">0{idx + 1}</span> {btn.label}
         </button>
       ))}
-    </div>
+    </Wrapper>
   );
 };
 

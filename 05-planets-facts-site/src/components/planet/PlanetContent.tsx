@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { IconSrc } from "../ui/icons";
+import Wrapper from "./PlanetContent.styled";
 
 interface IProps {
   name: string;
@@ -13,7 +14,7 @@ const PlanetContent: FC<IProps> = ({ name, context, curContext, srcUrl }) => {
   const srcLinkPath = `${srcUrl}${curContext !== "overview" ? curContext : ""}`;
 
   return (
-    <div className="planet-content flex-col text-to-center">
+    <Wrapper className=" flex-col text-to-center">
       <h2 className="ff-antonio text-white uppercase fs-900">{name}</h2>
       <p className="ff-spartan  fs-600 line-h3">{context}</p>
       <span className="ff-spartan">
@@ -27,7 +28,7 @@ const PlanetContent: FC<IProps> = ({ name, context, curContext, srcUrl }) => {
           <IconSrc />
         </Link>
       </span>
-    </div>
+    </Wrapper>
   );
 };
 
