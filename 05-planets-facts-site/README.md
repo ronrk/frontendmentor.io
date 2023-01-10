@@ -29,8 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/ronrk/frontendmentor.io/tree/main/05-planets-facts-site)
-- Live Site URL: [Add live site URL here](https://planets-page.vercel.app/Mercury)
+- Live Site URL: [Live Preview](https://planets-page.vercel.app/Mercury)
 
 ## My process
 
@@ -38,7 +37,7 @@ Users should be able to:
 
 - [Next.js](https://nextjs.org/) - React framework
 - [React](https://reactjs.org/) - JS library
-  Typescript
+- Typescript
 - [Styled Components](https://styled-components.com/) - For styles
 - CSS modules - For styles
 - Semantic HTML5 markup
