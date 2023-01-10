@@ -2,10 +2,10 @@ import Head from "next/head";
 import Recommended from "../src/components/dashboard/Recommended";
 import Trending from "../src/components/dashboard/Trending";
 
-import data from "../data.json";
 import { GetStaticProps } from "next";
 import { IMedia } from "../src/types/media";
 import { FC } from "react";
+import { getAllMedia, getTrendingMedia } from "../src/utils/media-utils";
 
 interface IProps {
   trendingMedia: IMedia[];
@@ -20,24 +20,35 @@ const Home: FC<IProps> = ({ trendingMedia, allMedia }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <main>
+
+      <section>
         <h2 className="text-heading-l">Trending</h2>
         <Trending media={trendingMedia} />
+      </section>
 
-        <h2 className="text-heading-l">Recommended for you</h2>
-        <Recommended media={allMedia} />
-      </main>
+      <Recommended media={allMedia} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = () => {
-  const trendingMedia = data.filter((media) => media.isTrending);
-  const allMedia = data;
-
-  return {
-    props: { trendingMedia, allMedia },
-  };
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const allMedia: IMedia[] = await getAllMedia();
+    const trendingMedia: IMedia[] = await getTrendingMedia();
+    const sortedMedia = allMedia.sort((m) => (m.isBookmarked ? 1 : -1));
+    return {
+      props: {
+        allMedia: sortedMedia,
+        trendingMedia,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: error,
+      },
+    };
+  }
 };
 
 export default Home;

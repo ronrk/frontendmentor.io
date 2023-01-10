@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
 
+/*
+for-mobile: min-width:500px
+for-tablet: max-width:500px
+for-desktop: max-width:900px
+ */
+
 :root {
   --ff: "Outfit", sans-serif;
 
@@ -30,6 +36,10 @@ html {
 body {
   font-family: var(--ff);
 }
+section {
+  /* padding-inline: 3em; */
+  /* width: 100vw; */
+}
 button,
 input {
   border: none;
@@ -38,6 +48,7 @@ input {
 }
 button {
   display: block;
+  cursor: pointer;
 }
 button:focus,
 input:focus {
@@ -126,7 +137,7 @@ input:focus {
   font-weight: 300;
   color: hsl(var(--clr-white));
 }
-.text-body-small {
+.text-body-s {
   font-size: var(--fs-500);
   font-weight: 300;
   color: hsl(var(--clr-white), 0.75);
@@ -144,4 +155,11 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: var(--gap, 1em);
+}
+
+@media screen and (min-width: 800px) {
+  section {
+    padding: 0;
+    /* margin-left: 1em; */
+  }
 }

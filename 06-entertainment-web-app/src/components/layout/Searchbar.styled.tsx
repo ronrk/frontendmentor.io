@@ -4,6 +4,8 @@ const SearchbarWrapper = styled.div`
   align-items: center;
   margin-block: 2rem;
   padding-inline: 1em;
+  align-self: start;
+
   & input {
     width: 100%;
     font-size: 1rem;

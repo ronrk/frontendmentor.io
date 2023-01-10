@@ -11,16 +11,16 @@ interface IProps {
 
 const MediaDetails: FC<IProps> = ({ title, category, rating, year }) => {
   return (
-    <Wrapper>
-      <ul className="info">
-        <li>{year}</li>
-        <li>
+    <Wrapper className="info media_details flex-col">
+      <ul className=" flex info-list">
+        <li className="text-body-s">{year}</li>
+        <li className="text-body-s">
           {category === "Movie" ? <IconCategoryMovie /> : <IconCategoryTv />}
           {category}
         </li>
-        <li>{rating}</li>
+        <li className="text-body-s">{rating}</li>
       </ul>
-      <h4>{title}</h4>
+      <h4 className="text-heading-xs">{title}</h4>
     </Wrapper>
   );
 };

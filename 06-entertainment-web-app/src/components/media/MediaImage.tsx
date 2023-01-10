@@ -1,16 +1,12 @@
 import Image from "next/image";
 import { FC } from "react";
+import { IMediaImage } from "../../types/media";
 import Wrapper from "./MediaImage.styled";
 
-interface IProps {
-  title: string;
-  imgSrc: string;
-}
-
-const MediaImage: FC<IProps> = ({ title, imgSrc }) => {
+const MediaImage: FC<IMediaImage> = ({ title, imgSrc }) => {
   return (
-    <Wrapper>
-      <Image src={imgSrc} alt={title} width={300} height={300} />
+    <Wrapper className="media_image">
+      <Image src={imgSrc} alt={title} fill={true} />
     </Wrapper>
   );
 };

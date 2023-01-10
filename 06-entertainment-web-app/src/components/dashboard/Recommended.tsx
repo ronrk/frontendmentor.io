@@ -1,16 +1,14 @@
 import { FC } from "react";
-import { IMedia } from "../../types/media";
-import MediaItem from "../media/MediaItem";
-import Wrapper from "./Recommended.styled";
+import { IComponentProps } from "../../types/media";
+import MediaGrid from "../media/MediaGrid";
 
-const Recommended: FC<{ media: IMedia[] }> = ({ media }) => {
+const Recommended: FC<IComponentProps> = ({ media }) => {
   console.log(media);
   return (
-    <div className="recommended">
-      {media.map((m) => (
-        <MediaItem key={m.title} media={m} />
-      ))}
-    </div>
+    <section>
+      <h2 className="text-heading-l">Recommended for you</h2>
+      <MediaGrid media={media} />
+    </section>
   );
 };
 

@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 export const IconNavBookmark = () => {
   return (
     <svg width="17" height="20" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +85,55 @@ export const Logo = () => {
       <path
         d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z"
         fill="#FC4747"
+      />
+    </svg>
+  );
+};
+
+export const IconBookmarkEmpty: FC<{ className: string }> = ({ className }) => {
+  return (
+    <svg
+      className={className}
+      width="12"
+      height="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
+        stroke="#FFF"
+        strokeWidth="1.5"
+        fill="none"
+      />
+    </svg>
+  );
+};
+export const IconBookmarkFull: FC<{ className: string }> = ({ className }) => {
+  return (
+    <svg
+      className={className}
+      width="12"
+      height="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10.61 0c.14 0 .273.028.4.083a1.03 1.03 0 0 1 .657.953v11.928a1.03 1.03 0 0 1-.656.953c-.116.05-.25.074-.402.074-.291 0-.543-.099-.756-.296L5.833 9.77l-4.02 3.924c-.218.203-.47.305-.756.305a.995.995 0 0 1-.4-.083A1.03 1.03 0 0 1 0 12.964V1.036A1.03 1.03 0 0 1 .656.083.995.995 0 0 1 1.057 0h9.552Z"
+        fill="#FFF"
+      />
+    </svg>
+  );
+};
+
+export const IconPlay: FC<{ className: string }> = ({ className }) => {
+  return (
+    <svg
+      className={className}
+      width="30"
+      height="30"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z"
+        fill="#FFF"
       />
     </svg>
   );
