@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap");
+
+:root {
+  --ff: "Outfit", sans-serif;
+
+  --clr-primary: 0, 97%, 63%;
+  --clr-black: 223, 30%, 9%;
+  --clr-blue-light: 223, 23%, 46%;
+  --clr-blue-dark: 223, 36%, 14%;
+  --clr-white: 0, 0%, 100%;
+
+  --fs-900: 2rem;
+  --fs-800: 1.5rem;
+  --fs-700: 1.125rem;
+  --fs-600: 0.9375rem;
+  --fs-500: 0.8125rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff);
+}
+button,
+input {
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+button {
+  display: block;
+}
+button:focus,
+input:focus {
+  outline: none;
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fw-l {
+  font-weight: 300;
+}
+.fw-m {
+  font-weight: 500;
+}
+.ff {
+  font-family: var(--ff);
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+.text-primary {
+  color: hsl(var(--clr-primary));
+}
+.text-black {
+  color: hsl(var(--clr-black));
+}
+.text-blue-dark {
+  color: hsl(var(--clr-blue-dark));
+}
+.text-blue-light {
+  color: hsl(var(--clr-blue-light));
+}
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+.bg-primary {
+  background-color: hsl(var(--clr-primary));
+}
+.bg-black {
+  background-color: hsl(var(--clr-black));
+}
+.bg-blue-dark {
+  background-color: hsl(var(--clr-blue-dark));
+}
+.bg-blue-light {
+  background-color: hsl(var(--clr-blue-light));
+}
+
+.text-heading-l {
+  font-size: var(--fs-900);
+  font-weight: 300;
+  color: hsl(var(--clr-white));
+}
+.text-heading-m {
+  font-size: var(--fs-800);
+  font-weight: 300;
+  color: hsl(var(--clr-white));
+}
+.text-heading-s {
+  font-size: var(--fs-800);
+  font-weight: 500;
+  color: hsl(var(--clr-white));
+}
+.text-heading-xs {
+  font-size: var(--fs-700);
+  font-weight: 300;
+  color: hsl(var(--clr-white));
+}
+.text-body-m {
+  font-size: var(--fs-600);
+  font-weight: 300;
+  color: hsl(var(--clr-white));
+}
+.text-body-small {
+  font-size: var(--fs-500);
+  font-weight: 300;
+  color: hsl(var(--clr-white), 0.75);
+}
+
+.text-color-05 {
+  color: hsl(var(--clr-white), 0.5);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 1em);
+}
