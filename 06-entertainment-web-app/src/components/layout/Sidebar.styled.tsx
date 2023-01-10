@@ -8,6 +8,25 @@ const SidebarWrapper = styled.header`
 
   & .navlist {
     list-style-type: none;
+
+    & a {
+      & path {
+        transition: all 0.2s;
+      }
+      &:hover {
+        & path {
+          transition: all 0.2s;
+
+          fill: hsl(var(--clr-primary));
+        }
+      }
+    }
+
+    & .active {
+      & path {
+        fill: hsl(var(--clr-white));
+      }
+    }
   }
   @media screen and (min-width: 800px) {
     flex-direction: column;

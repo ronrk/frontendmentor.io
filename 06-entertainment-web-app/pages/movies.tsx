@@ -5,7 +5,12 @@ import { IPageProps } from "../src/types/media";
 import { getMediaByCategory } from "../src/utils/media-utils";
 
 const MoviesPage: FC<IPageProps> = ({ media }) => {
-  return <MediaGrid media={media} />;
+  return (
+    <>
+      <h2 className="text-heading-l">Movies</h2>
+      <MediaGrid media={media} />
+    </>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

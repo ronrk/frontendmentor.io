@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import {
   IconNavBookmark,
   IconNavHome,
@@ -10,6 +12,8 @@ import {
 import Wrapper from "./Sidebar.styled";
 
 const Sidebar = () => {
+  const router = useRouter();
+
   return (
     <Wrapper className="sidebar flex bg-blue-dark">
       <Logo />
@@ -17,22 +21,30 @@ const Sidebar = () => {
         <ul className="navlist flex">
           <li>
             <Link href={"/"}>
-              <IconNavHome />
+              <IconNavHome
+                className={router.pathname === "/" ? "active" : ""}
+              />
             </Link>
           </li>
           <li>
             <Link href={"/movies"}>
-              <IconNavMovies />
+              <IconNavMovies
+                className={router.pathname === "/movies" ? "active" : ""}
+              />
             </Link>
           </li>
           <li>
             <Link href={"/tv-series"}>
-              <IconNavTv />
+              <IconNavTv
+                className={router.pathname === "/tv-series" ? "active" : ""}
+              />
             </Link>
           </li>
           <li>
             <Link href={"/bookmark"}>
-              <IconNavBookmark />
+              <IconNavBookmark
+                className={router.pathname === "/bookmark" ? "active" : ""}
+              />
             </Link>
           </li>
         </ul>

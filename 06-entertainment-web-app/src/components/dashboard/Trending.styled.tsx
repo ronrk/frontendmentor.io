@@ -6,6 +6,7 @@ const TrendingWrapper = styled.div`
   height: 230px;
   position: relative;
   transition: all 0.2s;
+  margin-bottom: 2em;
 
   & .trending_inner {
     position: absolute;

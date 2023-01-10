@@ -44,3 +44,8 @@ export const getMediaByCategory: (category: TCategory) => Promise<any> = async (
     return { message: "server error", status: 500 } as IError;
   }
 };
+
+export const getBookmarkedMedia = async () => {
+  const allMedia: IMedia[] = await getAllMedia();
+  return allMedia.filter((m) => m.isBookmarked);
+};
