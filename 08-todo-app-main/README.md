@@ -1,6 +1,6 @@
-# Planets facts website
+# Todo App
 
-This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,27 +15,30 @@ This is a solution to the [Planets fact site challenge on Frontend Mentor](https
 
 ## Overview
 
+FUll stack application implement with React on client and Express on server
+
 ### The challenge
 
 Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
-- View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
+- Create, Read, Update & Remove tasks from tasks list.
+- Login and logout
+- State save on LocaleStorage
 
 ### Links
 
-- Live Site URL: [Live Preview](https://planets-page.vercel.app/Mercury)
+- Live Site URL: [Live Preview](https://ephemeral-bublanina-4f519c.netlify.app/)
 
 ## My process
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) - React framework
 - [React](https://reactjs.org/) - JS library
-- Typescript
+- NodeJs
+- [Express](https://www.npmjs.com/package/express) - API Server
 - [Styled Components](https://styled-components.com/) - For styles
-- CSS modules - For styles
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
@@ -45,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-On this project i learned about server side rendering. and keep my learning writing code with Typescript
+On this project i learned to create API server with express. authentication with token.
 
 ## Author
 
