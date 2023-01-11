@@ -1,0 +1,36 @@
+.planet_page {
+  display: grid;
+  grid-template-areas:
+    "tabs tabs tabs"
+    ". image ."
+    ". content ."
+    ". info .";
+  justify-items: center;
+  gap: 2rem;
+  padding-bottom: 3em;
+}
+@media screen and (min-width: 624px) {
+  .planet_page {
+    grid-template-columns: minmax(1em, 1em) repeat(2, minmax(min-content, 50%)) minmax(
+        1em,
+        1fr
+      );
+    grid-template-areas:
+      "image image image image"
+      ". content tabs ."
+      ". info info .";
+    justify-items: center;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .planet_page {
+    grid-template-areas:
+      ". image content ."
+      ". image tabs ."
+      ". info info .";
+    justify-items: center;
+    gap: 2rem;
+  }
+}

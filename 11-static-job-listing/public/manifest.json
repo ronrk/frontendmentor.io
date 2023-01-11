@@ -1,0 +1,9 @@
+{
+  "short_name": "Job Listing",
+  "name": "Static Job Listing",
+  "icons": "favicon-32x32.png",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
