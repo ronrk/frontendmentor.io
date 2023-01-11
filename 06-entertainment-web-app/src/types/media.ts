@@ -2,10 +2,11 @@ export type TLayout = "trending" | "gallery";
 export type TCategory = "Movie" | "TV Series";
 
 export interface IMedia {
+  id: string;
   title: string;
   imgSrc: string;
   year: number;
-  category: TCategory;
+  category: string;
   rating: string;
   isBookmarked: boolean;
   isTrending: boolean;

@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import data from "../../data.json";
-import { IMedia } from "../../src/types/media";
+import data from "../../../data/data.json";
+import { IMedia } from "../../../src/types/media";
+import { getAllMedia } from "../../../src/utils/media-server-utils";
 
 export default function handler(
   req: NextApiRequest,
@@ -9,7 +10,12 @@ export default function handler(
 ) {
   switch (req.method) {
     case "GET":
-      res.status(200).json(data);
+      const result: {
+        allMedia: IMedia[];
+        trendingMedia: IMedia[];
+        bookmarkedMedia: IMedia[];
+      } = getAllMedia();
+      res.status(200).json({ result });
       break;
 
     default:

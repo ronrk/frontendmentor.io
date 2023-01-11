@@ -1,18 +1,18 @@
 import Head from "next/head";
 import Recommended from "../src/components/dashboard/Recommended";
 import Trending from "../src/components/dashboard/Trending";
-
+import data from "../data/data.json";
 import { GetStaticProps } from "next";
 import { IMedia } from "../src/types/media";
 import { FC } from "react";
-import { getAllMedia, getTrendingMedia } from "../src/utils/media-utils";
+import { getAllMedia } from "../src/utils/media-server-utils";
 
 interface IProps {
   trendingMedia: IMedia[];
   allMedia: IMedia[];
 }
 
-const Home: FC<IProps> = ({ trendingMedia, allMedia }) => {
+const Home: FC<IProps> = ({ allMedia, trendingMedia }) => {
   return (
     <>
       <Head>
@@ -23,22 +23,21 @@ const Home: FC<IProps> = ({ trendingMedia, allMedia }) => {
 
       <section>
         <h2 className="text-heading-l">Trending</h2>
-        <Trending media={trendingMedia} />
+        <Trending media={data} />
       </section>
 
-      <Recommended media={allMedia} />
+      <Recommended media={data} />
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const allMedia: IMedia[] = await getAllMedia();
-    const trendingMedia: IMedia[] = await getTrendingMedia();
-    const sortedMedia = allMedia.sort((m) => (m.isBookmarked ? 1 : -1));
+    const { allMedia, trendingMedia } = getAllMedia();
+
     return {
       props: {
-        allMedia: sortedMedia,
+        allMedia,
         trendingMedia,
       },
     };

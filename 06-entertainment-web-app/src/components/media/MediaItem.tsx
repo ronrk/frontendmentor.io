@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { FC } from "react";
 import { IMediaItemProps } from "../../types/media";
 import { IconBookmarkEmpty, IconBookmarkFull, IconPlay } from "../ui/icons";
@@ -15,10 +16,30 @@ const MediaItem: FC<IMediaItemProps> = ({
   isBookmarked,
   isTrending,
   layout,
+  id,
 }) => {
+  const handleBookmarkChange = async () => {
+    try {
+      const res = await axios.patch("/api/media/" + id, {
+        title,
+        imgSrc,
+        year,
+        category,
+        rating,
+        isBookmarked: !isBookmarked,
+        isTrending,
+        layout,
+        id,
+      });
+      console.log(res);
+    } catch (error) {
+      console.log({ error });
+    }
+  };
   return (
     <Wrapper className={`media ${layout}`}>
       <MediaImage
+        id={id}
         title={title}
         imgSrc={imgSrc}
         year={year}
@@ -34,7 +55,7 @@ const MediaItem: FC<IMediaItemProps> = ({
         year={year}
       />
       <MediaActions className="media_actions">
-        <button className="btn-bookmark">
+        <button className="btn-bookmark" onClick={handleBookmarkChange}>
           {isBookmarked ? (
             <IconBookmarkFull className="icon" />
           ) : (

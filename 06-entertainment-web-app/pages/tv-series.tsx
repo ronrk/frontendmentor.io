@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next/types";
 import React, { FC } from "react";
 import MediaGrid from "../src/components/media/MediaGrid";
 import { IPageProps } from "../src/types/media";
-import { getMediaByCategory } from "../src/utils/media-utils";
+import { getMediaByCategory } from "../src/utils/media-server-utils";
 
 const TvPage: FC<IPageProps> = ({ media }) => {
   return (
