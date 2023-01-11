@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  /* COLORS */
+  --pale-violet: 276, 100%, 81%;
+  --moderate-violet: 276, 55%, 52%;
+  --desaturated-dark-violet: 271, 15%, 43%;
+  --grayish-blue: 206, 6%, 79%;
+  --very-dark-desaturated-violet: 271, 36%, 24%;
+  --dark-grayish-violet: 270, 7%, 64%;
+
+  --gradient-1: 293, 100%, 63%;
+  --gradient-2: 264, 100%, 61%;
+
+  --color-white: 0, 0%, 100%;
+  --color-gray: 270, 20%, 96%;
+  --color-violet: 271, 36%, 24%;
+  --color-magneta: 289, 100%, 72%;
+
+  --fs-900: 2.5rem;
+  --fs-800: 1.25rem;
+  --fs-700: 0.875rem;
+  --fs-600: 0.685rem;
+  --fs-500: 0.5rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.text-sub-color {
+  color: hsl(var(--pale-violet));
+}
+
+.text-violet-light {
+  color: hsl(var(--moderate-violet));
+}
+.text-violet-dark {
+  color: hsl(var(--desaturated-dark-violet));
+}
+.text-violet-dark-2 {
+  color: hsl(var(--very-dark-desaturated-violet));
+}
+
+.text-gray-light {
+  color: hsl(var(--grayish-blue));
+}
+.text-gray-dark {
+  color: hsl(var(--dark-grayish-violet));
+}
+
+.text-white {
+  color: hsl(var(--color-white));
+}
+.text-center {
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fw-b {
+  font-weight: 700;
+}
+.fw-m {
+  font-weight: 500;
+}
+.fw-l {
+  font-weight: 400;
+}
+
+.bg-white {
+  background-color: hsl(var(--color-white));
+}
+
+.bg-gray {
+  background-color: hsl(var(--color-gray));
+}
+
+.bg-violet {
+  background-color: hsl(var(--color-violet));
+}
+
+/* BG */
+
+.app {
+  min-height: 100vh;
+  padding-block: 3rem;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  border-bottom-left-radius: 10000px;
+  border-bottom-right-radius: 10000px;
+  top: 0;
+  left: -250px;
+  width: 450px;
+  height: 50%;
+  background-image: linear-gradient(
+    hsl(var(--gradient-1)),
+    hsl(var(--gradient-2))
+  );
+  /* background-size: 50% 50%; */
+  background-repeat: no-repeat;
+  /* background-clip: polygon(0 0, 100% 0); */
+}
+
+@media (min-width: 850px) {
+  .app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(5rem, 10vw, 10rem);
+  }
+  .bg {
+    height: 90%;
+    left: -100px;
+  }
+}

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --font: "Kumbh Sans", sans-serif;
+
+  /*   ### Primary  */
+
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --text-dark: hsl(220, 13%, 13%);
+  --text-light: hsl(219, 9%, 45%);
+  --grey-light: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  /* (with 75% opacity for lightbox background) */
+  --black: hsla(0, 0%, 0%, 0.75);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+main {
+  position: relative;
+  background-color: var(--light-grayish-blue);
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+}
+
+.overlay {
+  filter: opacity(30%) blur(10px);
+  /* background-color: var(--black); */
+}
+
+body {
+  font-family: var(--font);
+}
+
+.btn {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  border-radius: 6px;
+  color: var(--white);
+  font-family: var(--font);
+}
+
+.heading-2 {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-size: 1.2rem;
+}
+
+.heading-1 {
+  font-size: 4.3rem;
+  word-spacing: 2.3px;
+  letter-spacing: 1.3px;
+  color: var(--text-dark);
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 57%;
+  }
+}

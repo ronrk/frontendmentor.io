@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+:root {
+  --font: "Public Sans", sans-serif;
+
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+
+  /* ### Neutral */
+
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.app-container {
+  background-color: var(--very-light-gray);
+  display: grid;
+  grid-template-rows: min-content 90vh repeat(3, min-content);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+  font-family: var(--font);
+}
+body {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background: none;
+  border: none;
+  border-radius: none;
+  font-family: var(--font);
+  display: block;
+  cursor: pointer;
+}
+
+.btn-req {
+  padding: 1.2rem 2.6rem;
+  border-radius: 1000px;
+  color: var(--white);
+  letter-spacing: 1.1px;
+  background-image: linear-gradient(
+    to right,
+    var(--lime-green),
+    var(--bright-cyan)
+  );
+  transition: all 0.2s;
+}
+
+.btn-req:hover {
+  opacity: 0.7;
+  background-image: linear-gradient(
+    to right,
+
+    var(--bright-cyan),
+    var(--lime-green)
+  );
+}
+
+.heading-2 {
+  font-size: 3.8rem;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  color: var(--dark-blue);
+}
+
+.app-container.overlay {
+  filter: blur(4px);
+}
+
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 59%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

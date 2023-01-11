@@ -1,0 +1,9 @@
+{
+  "short_name": "Manage",
+  "name": "Manage landing page",
+  "icons": "favicon-32x32.png",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
