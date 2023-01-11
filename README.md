@@ -11,6 +11,10 @@ This is a libary contains solutions to the [Frontend Mentor](https://www.fronten
 - [Password Generator](https://github.com/ronrk/frontendmentor.io/tree/main/04-password-generator)
 - [Planets Facts Website](https://github.com/ronrk/frontendmentor.io/tree/main/05-planets-facts-site)
 - [Todo App](https://github.com/ronrk/frontendmentor.io/tree/main/08-todo-app-main)
+- [URL Shortening](https://github.com/ronrk/frontendmentor.io/tree/main/09-url-shortening)
+- [Space Tourism](https://github.com/ronrk/frontendmentor.io/tree/main/10-space-tourism)
+- [Static Job Listening](https://github.com/ronrk/frontendmentor.io/tree/main/11-static-job-listing)
+- [Tip Calculator](https://github.com/ronrk/frontendmentor.io/tree/main/13-tip-calculator)
 
 
 ## Author
