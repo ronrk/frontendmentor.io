@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+/* - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%) v
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
+
+/* 
+24 -> 14
+16 -> 12
+14 -> 12
+18
+16
+
+*/
+
+:root {
+  --ff: "Nunito Sans", sans-serif;
+  --clr-bg-app: 0, 0%, 98%;
+  --clr-text: 200, 15%, 8%;
+  --clr-box: 0, 0%, 100%;
+  --clr-input: 0, 0%, 52%;
+
+  --fs-500: 1.5rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+  --fs-200: 1.125rem;
+  --fs-100: 1rem;
+
+  --layout-padding: 2em;
+}
+
+.dark {
+  --clr-bg-app: 207, 26%, 17%; /* v */
+  --clr-text: 0, 0%, 100%; /* v */
+  --clr-box: 209, 23%, 22%; /* v */
+  --clr-input: 0, 0%, 52%; /* ??? */
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  display: block;
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+.app {
+  background-color: hsla(var(--clr-bg-app), 1);
+  transition: all 0.3s ease-in-out;
+}
+.box {
+  background-color: hsl(var(--clr-box));
+  transition: all 0.3s ease-in-out;
+}
+.text-color {
+  color: hsl(var(--clr-text));
+  transition: all 0.2s ease-in-out;
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-100 {
+  font-size: var(--fs-100);
+}
+
+.fw-l {
+  font-weight: 300;
+}
+.fw-m {
+  font-weight: 600;
+}
+.fw-b {
+  font-weight: 800;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1em);
+}
+.flex-col {
+  display: flex;
+  gap: var(--gap, 1em);
+  flex-direction: column;
+}
+
+.padding-inline-app {
+  padding-inline: var(--layout-padding);
+}
+
+.single-page {
+  height: 100%;
+}
+.back-nav {
+  display: flex;
+
+  width: min-content;
+
+  padding: 1em 2em;
+  border-radius: 10px;
+  --gap: 0.5em;
+  align-items: center;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
+}
+.back-nav .icon {
+  /* font-size: 1.5rem; */
+  fill: currentColor;
+}
