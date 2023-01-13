@@ -3,15 +3,7 @@
 This is a libary contains solutions to the [Frontend Mentor](https://www.frontendmentor.io/home). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
-- Landing Pages
-  - [Pod Request](https://github.com/ronrk/frontendmentor.io/tree/main/00-pod-request)
-  - [Single Page portfolio](https://github.com/ronrk/frontendmentor.io/tree/main/01-single-page-portfolio)
-  - [URL Shortening](https://github.com/ronrk/frontendmentor.io/tree/main/09-url-shortening)
-  - [Bookmark-Landing](https://github.com/ronrk/frontendmentor.io/tree/main/14-bookmark-landing)
-  - [Chat-Illustration](https://github.com/ronrk/frontendmentor.io/tree/main/15-chat-app-iillustration)
-  - [Manage-landing](https://github.com/ronrk/frontendmentor.io/tree/main/16-manage-landing-page)
-  - [Room Homepage](https://github.com/ronrk/frontendmentor.io/tree/main/17-room-homepage)
-  - [Easy Bank - landing](https://github.com/ronrk/frontendmentor.io/tree/main/19-easy-bank-landing-page)
+e)
   - [Huddle landing](https://github.com/ronrk/frontendmentor.io/tree/main/21-huddle-landing-page)
   
 - Web Apps
@@ -24,16 +16,20 @@ This is a libary contains solutions to the [Frontend Mentor](https://www.fronten
   - [Product Page](https://capable-profiterole-8c7a7c.netlify.app/)
   - [Social Meida + theme switcher](https://github.com/ronrk/frontendmentor.io/tree/main/20-social-media-dashboard)
   
-  
-- Fullstack Apps
-  -
-  
 - Websites with dynamic pages
   - [Tic Tac Toe](https://github.com/ronrk/frontendmentor.io/tree/main/03-tic-tac-toe)
   - [Planets Facts Website](https://github.com/ronrk/frontendmentor.io/tree/main/05-planets-facts-site)
   - [Space Tourism](https://github.com/ronrk/frontendmentor.io/tree/main/10-space-tourism)
   - [Multi-Steps-Form](https://github.com/ronrk/frontendmentor.io/tree/main/12-multi-step-form)
-
+- Landing Pages
+  - [Pod Request](https://github.com/ronrk/frontendmentor.io/tree/main/00-pod-request)
+  - [Single Page portfolio](https://github.com/ronrk/frontendmentor.io/tree/main/01-single-page-portfolio)
+  - [URL Shortening](https://github.com/ronrk/frontendmentor.io/tree/main/09-url-shortening)
+  - [Bookmark-Landing](https://github.com/ronrk/frontendmentor.io/tree/main/14-bookmark-landing)
+  - [Chat-Illustration](https://github.com/ronrk/frontendmentor.io/tree/main/15-chat-app-iillustration)
+  - [Manage-landing](https://github.com/ronrk/frontendmentor.io/tree/main/16-manage-landing-page)
+  - [Room Homepage](https://github.com/ronrk/frontendmentor.io/tree/main/17-room-homepage)
+  - [Easy Bank - landing](https://github.com/ronrk/frontendmentor.io/tree/main/19-easy-bank-landing-pag
 
 ## Author
 
