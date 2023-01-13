@@ -31,11 +31,8 @@ Users should be able to:
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) - React framework
 - [React](https://reactjs.org/) - JS library
-- Typescript
 - [Styled Components](https://styled-components.com/) - For styles
-- CSS modules - For styles
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
