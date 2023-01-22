@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&display=swap");
+
+:root {
+  --clr-primary: 179, 80%, 58%;
+  --clr-secondary: 206, 84%, 22%;
+  --clr-gray: 225, 14%, 53%;
+  --clr-white: 0, 0%, 100%;
+  --clr-black: 230, 60%, 8%;
+  --clr-red: 343, 100%, 58%;
+
+  --fs-800: 2rem;
+  --fs-700: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.125rem;
+  --fs-400: 0.9375rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500; /* 800 */
+}
+
+.text-primary {
+  color: hsl(var(--clr-primary));
+}
+.text-secondary {
+  color: hsl(var(--clr-secondary));
+}
+.text-gray {
+  color: hsl(var(--clr-gray));
+}
+.text-black {
+  color: hsl(var(--clr-black));
+}
+.text-black-5 {
+  color: hsla(var(--clr-black), 0.5);
+}
+.text-white {
+  color: hsl(var(--clr-white));
+}
+.text-white-5 {
+  color: hsla(var(--clr-white), 0.5);
+}
+.text-red {
+  color: hsl(var(--clr-red));
+}
+.bg-primary {
+  background-color: hsl(var(--clr-primary));
+}
+.bg-secondary {
+  background-color: hsl(var(--clr-secondary));
+}
+.bg-gray {
+  background-color: hsl(var(--clr-gray));
+}
+.bg-black {
+  background-color: hsl(var(--clr-black));
+}
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+.bg-red {
+  background-color: hsl(var(--clr-red));
+}
+
+.text-center {
+  text-align: center;
+}
+.container {
+  width: 90vw;
+  margin-inline: auto;
+  max-width: 35.8125rem;
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fw-b {
+  font-weight: 800;
+}
+.fw-m {
+  font-weight: 500;
+}
+
+.line-h-1 {
+  line-height: 1.5625rem;
+}
+
+.line-h-2 {
+  line-height: 2.75rem;
+}
+
+.line-h-3 {
+  line-height: 3.4375rem;
+}
+.line-h-4 {
+  line-height: clamp(2.5rem, 4vw, 3.5rem);
+}
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  background: none;
+  border: none;
+  display: block;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-family: inherit;
+}
+img {
+  max-width: 100%;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 8em;
+}
+
+.pricing-header {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1200px) {
+  .features {
+    /* display: flex; */
+    flex-direction: row;
+    gap: 2rem;
+    min-width: 90%;
+    justify-content: space-evenly;
+  }
+  .pricings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+}
