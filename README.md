@@ -32,6 +32,9 @@ This is a libary contains solutions to the [Frontend Mentor](https://www.fronten
   - [Room Homepage](https://github.com/ronrk/frontendmentor.io/tree/main/17-room-homepage)
   - [Easy Bank - landing](https://github.com/ronrk/frontendmentor.io/tree/main/19-easy-bank-landing-page)
   - [Huddle landing](https://github.com/ronrk/frontendmentor.io/tree/main/21-huddle-landing-page)
+  - [Maker pre-launch-landing page](https://github.com/ronrk/frontendmentor.io/tree/main/24-maker-landing-page)
+  
+
 
 ## Author
 
