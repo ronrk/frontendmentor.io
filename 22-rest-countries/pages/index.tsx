@@ -16,7 +16,7 @@ interface IProps {
   error: null | any;
 }
 
-const Home: FC<IProps> = ({ countries }) => {
+const Home: FC<IProps> = ({ countries, error }) => {
   const { renderedCountries } = useSelector(selectValue);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,6 +25,14 @@ const Home: FC<IProps> = ({ countries }) => {
   }, [dispatch, countries]);
 
   let content = <h2>NO COUNTRIES</h2>;
+
+  if (error)
+    return (
+      <main>
+        <SearchBar />
+        <h1>Error</h1>
+      </main>
+    );
 
   if (countries) {
     content = <CountriesGrid counties={renderedCountries} />;

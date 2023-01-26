@@ -14,9 +14,9 @@ const GameStart = () => {
 
       <PickPlayer />
       <div className="btns-container flex-col ">
-        <Button secondary fullWidth className="letter-space-5 fs-300 uppercase">
+        {/*       <Button secondary fullWidth className="letter-space-5 fs-300 uppercase">
           new game (vs cpu)
-        </Button>
+        </Button> */}
         <Button
           primary
           fullWidth

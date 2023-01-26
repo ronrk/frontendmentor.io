@@ -1,4 +1,4 @@
-import { ICountryDetail, ICountryShort } from "./types/ICountry";
+import { ICountryShort } from "./types/ICountry";
 
 export const defaultCountriesNames = [
   "germany",
