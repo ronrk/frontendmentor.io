@@ -22,6 +22,7 @@ This is a libary contains solutions to the [Frontend Mentor](https://www.fronten
   - [Planets Facts Website](https://github.com/ronrk/frontendmentor.io/tree/main/05-planets-facts-site)
   - [Space Tourism](https://github.com/ronrk/frontendmentor.io/tree/main/10-space-tourism)
   - [Multi-Steps-Form](https://github.com/ronrk/frontendmentor.io/tree/main/12-multi-step-form)
+  - [Officelite coming soon page](https://github.com/ronrk/frontendmentor.io/tree/main/24-officite-coming-soon)
 - Landing Pages
   - [Pod Request](https://github.com/ronrk/frontendmentor.io/tree/main/00-pod-request)
   - [Single Page portfolio](https://github.com/ronrk/frontendmentor.io/tree/main/01-single-page-portfolio)
