@@ -4,7 +4,7 @@
 
 ### Live Preview:
 
-https://jolly-longma-c6958e.netlify.app/
+https://magnificent-figolla-d4e1bf.netlify.app/
 
 ## Web app tic-tac-toe Game.
 
