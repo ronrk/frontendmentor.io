@@ -1,26 +1,27 @@
 import Head from "next/head";
-import Categories from "../src/components/homepage/categories/Categories";
+import Categories from "../src/components/shared/categories/Categories";
 import FeaturedProducts from "../src/components/homepage/featuredProducts/FeaturedProducts";
 import Hero from "../src/components/homepage/Hero";
+import { ISectionStyle } from "../src/utils/utils";
 
 const featuredProducts = [
   {
     name: "zx9 speaker",
-    path: "",
+    slug: "zx9-speaker",
     imageSrc: "/assets/home/desktop/image-speaker-zx9.png",
-    style: "primary",
+    style: ISectionStyle.PRIMARY,
   },
   {
     name: "zx7 speaker",
-    path: "",
+    slug: "zx7-speaker",
     imageSrc: "/assets/home/desktop/image-speaker-zx7.jpg",
-    style: "secondary",
+    style: ISectionStyle.SECONDARY,
   },
   {
     name: "yx1 earphones",
-    path: "",
+    slug: "yx1-earphones",
     imageSrc: "/assets/home/desktop/image-earphones-yx1.jpg",
-    style: "seperate",
+    style: ISectionStyle.SEPERATE,
   },
 ];
 

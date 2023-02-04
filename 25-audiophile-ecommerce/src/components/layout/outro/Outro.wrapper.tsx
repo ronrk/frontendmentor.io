@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const OutroWrapper = styled.section`
+  margin-bottom: 9rem;
   & .container {
     align-items: center;
   }

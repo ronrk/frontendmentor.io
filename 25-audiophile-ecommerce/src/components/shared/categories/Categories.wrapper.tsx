@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CategoriesWrapper = styled.section`
-  margin-block: 10rem 7rem;
+  margin-block: 15rem 7rem;
   & ul {
     justify-content: space-evenly;
   }

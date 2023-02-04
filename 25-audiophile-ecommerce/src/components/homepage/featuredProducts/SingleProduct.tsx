@@ -18,7 +18,7 @@ const SingleProduct: FC<IProps> = ({ name, path, imageSrc, style }) => {
         <div className="image__wrapper bg__image">
           <Image
             src={"/assets/home/desktop/pattern-circles.svg"}
-            alt={""}
+            alt={name}
             fill
           />
         </div>
@@ -42,7 +42,7 @@ const SingleProduct: FC<IProps> = ({ name, path, imageSrc, style }) => {
           truly remarkable sound.
         </p>
         <LinkButton
-          path="/"
+          path={path}
           color={style === "primary" ? "black" : "transparent"}
         >
           see product

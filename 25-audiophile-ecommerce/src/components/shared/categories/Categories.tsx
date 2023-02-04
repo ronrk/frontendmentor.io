@@ -6,9 +6,21 @@ import imgEarphones from "../../../../public/assets/shared/desktop/image-categor
 import Category from "./Category";
 
 const categoriesList = [
-  { title: "headphones", path: "/", imageSrc: imgHeadphohnes },
-  { title: "speakers", path: "/", imageSrc: imgSpeakers },
-  { title: "earphones", path: "/", imageSrc: imgEarphones },
+  {
+    title: "headphones",
+    path: "/headphones",
+    imageSrc: imgHeadphohnes,
+  },
+  {
+    title: "speakers",
+    path: "/speakers",
+    imageSrc: imgSpeakers,
+  },
+  {
+    title: "earphones",
+    path: "/earphones",
+    imageSrc: imgEarphones,
+  },
 ];
 
 const Categories = () => {

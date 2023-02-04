@@ -27,3 +27,9 @@ export interface IProduct {
     desktop: string;
   };
 }
+
+export enum ISectionStyle {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  SEPERATE = "seperate",
+}

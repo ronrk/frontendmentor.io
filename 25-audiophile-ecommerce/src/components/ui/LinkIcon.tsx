@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { IconRight } from "./icons";
 import styled from "styled-components";
 import Link from "next/link";
+
+interface IProps {
+  path: string;
+}
 
 const StyledLinkIcon = styled(Link)`
   align-items: center;
@@ -12,9 +16,9 @@ const StyledLinkIcon = styled(Link)`
   }
 `;
 
-const LinkIcon = () => {
+const LinkIcon: FC<IProps> = ({ path }) => {
   return (
-    <StyledLinkIcon href="/" className="text-black-light text-overline flex">
+    <StyledLinkIcon href={path} className="text-black-light text-overline flex">
       Shop <IconRight />
     </StyledLinkIcon>
   );

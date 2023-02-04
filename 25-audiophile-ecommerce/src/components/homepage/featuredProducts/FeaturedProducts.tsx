@@ -1,13 +1,14 @@
 import React, { FC } from "react";
+import { ISectionStyle } from "../../../utils/utils";
 import FeaturedProductsWrapper from "./FeaturedProducts.wrapper";
 import SingleProduct from "./SingleProduct";
 
 interface IProps {
   featuredProducts: {
     name: string;
-    path: string;
+    slug: string;
     imageSrc: string;
-    style: "primary" | "secondary" | "seperate";
+    style: ISectionStyle;
   }[];
 }
 
@@ -17,7 +18,7 @@ const FeaturedProducts: FC<IProps> = ({ featuredProducts }) => {
       {featuredProducts.map((product, idx) => (
         <SingleProduct
           name={product.name}
-          path={product.path}
+          path={`/products/${product.slug}`}
           key={idx}
           imageSrc={product.imageSrc}
           style={product.style}

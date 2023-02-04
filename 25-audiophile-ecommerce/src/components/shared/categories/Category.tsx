@@ -16,7 +16,7 @@ const Category: FC<IProps> = ({ imageSrc, title, path }) => {
         <Image src={imageSrc} alt={title} fill />
       </div>
       <h3 className="sub-heading text-black">{title}</h3>
-      <LinkIcon />
+      <LinkIcon path={path} />
     </li>
   );
 };
