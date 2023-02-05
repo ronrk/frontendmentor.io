@@ -260,3 +260,20 @@ body {
   text-align: center;
   padding-block: 4rem;
 }
+
+html {
+  background-color: hsl(var(--clr-gray));
+}
+
+.checkout-page {
+  margin-top: 3rem;
+}
+.checkout-page .btn--back {
+  margin-bottom: 3rem;
+}
+
+.checkout-page section {
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 30%);
+  gap: 2rem;
+}

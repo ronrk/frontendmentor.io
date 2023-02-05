@@ -37,7 +37,6 @@ const SingleProductPage: FC<IProps> = ({ product }) => {
 export default SingleProductPage;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  console.log(context.params);
   const { slug, category } = context.params as any;
   let props: IProps = {
     product: null,
