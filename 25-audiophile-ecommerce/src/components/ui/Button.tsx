@@ -6,7 +6,8 @@ interface IProps {
   children: React.ReactNode;
 
   color: "primary" | "transparent" | "black";
-  onClick: () => void;
+  onClick?: () => void;
+  type?: string;
 }
 interface IStyled {
   color: "primary" | "transparent" | "black";

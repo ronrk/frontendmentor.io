@@ -272,8 +272,34 @@ html {
   margin-bottom: 3rem;
 }
 
-.checkout-page section {
+.form {
+  border-radius: 6px;
   display: grid;
-  grid-template-columns: 1fr minmax(min-content, 30%);
+  grid-template-columns: 1fr minmax(min-content, 25%);
   gap: 2rem;
+}
+.form .heading-2 {
+  margin-bottom: 3rem;
+}
+
+.form .heading-6 {
+  font-size: 1rem;
+}
+
+.form > div {
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.form .cash-on {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 2rem;
+}
+.form .cash-on p {
+  max-width: 65ch;
+}
+.form .cash-on .image__wrapper {
+  width: 60px;
+  aspect-ratio: 1;
 }

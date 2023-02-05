@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CheckoutFormWrapper = styled.form`
+const CheckoutFormWrapper = styled.section`
   padding: 2rem;
   border-radius: 6px;
 
@@ -14,6 +14,20 @@ const CheckoutFormWrapper = styled.form`
 
   & > div {
     margin-block: 3rem;
+  }
+
+  & .cash-on {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2rem;
+
+    & p {
+      max-width: 65ch;
+    }
+    & .image__wrapper {
+      width: 60px;
+      aspect-ratio: 1;
+    }
   }
 `;
 

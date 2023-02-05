@@ -16,11 +16,10 @@ const useInput = (validate: (value: string) => boolean) => {
   };
   const onBlur = () => {
     const isValueValid = validate(value);
-
     setError(!isValueValid);
   };
 
-  return { value, handleChange, isError, onFocus, onBlur };
+  return { value, handleChange, isError, onFocus, onBlur, isTouched };
 };
 
 export default useInput;

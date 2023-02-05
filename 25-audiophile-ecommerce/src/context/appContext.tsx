@@ -1,4 +1,11 @@
-import React, { FC, useCallback, useContext, useEffect, useState } from "react";
+import React, {
+  FC,
+  FormEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface IProps {
   children: React.ReactNode;
@@ -20,6 +27,8 @@ interface IContextProps {
   addItemToCart: (cartItem: ICartItem, quantity: number) => void;
   removeItemFromCart: (cartItem: ICartItem) => void;
   clearCart: () => void;
+  isCheckoutModal: boolean;
+  toggleCheckoutModal: () => void;
 }
 
 const initialState = {
@@ -31,6 +40,8 @@ const initialState = {
   cart: [],
   totalPrice: 0,
   clearCart: () => {},
+  isCheckoutModal: false,
+  toggleCheckoutModal: () => {},
 };
 
 const AppContext = React.createContext<IContextProps>(initialState);
@@ -39,6 +50,7 @@ const AppContextProvider: FC<IProps> = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cart, setCart] = useState<ICartItem[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [isCheckoutModal, setIsCheckoutModal] = useState(false);
 
   const openCart = () => {
     setIsCartOpen(true);
@@ -101,6 +113,10 @@ const AppContextProvider: FC<IProps> = ({ children }) => {
     setCart([]);
   };
 
+  const toggleCheckoutModal = () => {
+    setIsCheckoutModal((prev) => !prev);
+  };
+
   const appValue = {
     openCart,
     closeCart,
@@ -110,6 +126,8 @@ const AppContextProvider: FC<IProps> = ({ children }) => {
     addItemToCart,
     removeItemFromCart,
     clearCart,
+    toggleCheckoutModal,
+    isCheckoutModal,
   };
 
   return <AppContext.Provider value={appValue}>{children}</AppContext.Provider>;

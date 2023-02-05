@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 interface IProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const FormGroupWrapper = styled.div`
   flex-wrap: wrap;
+  margin-bottom: 5rem;
 `;
 
 const FormGroup: FC<IProps> = ({ children, className }) => {

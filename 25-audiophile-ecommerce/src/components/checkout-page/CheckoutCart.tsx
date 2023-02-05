@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 import { useAppContext } from "../../context/appContext";
 import Button from "../ui/Button";
 import CheckoutCartWrapper from "./CheckoutCart.wrapper";
@@ -9,9 +9,9 @@ const CheckoutCart = () => {
   let vatTotal = (totalPrice / 0.5) * 0.1;
   let shippingPrice = 50;
   return (
-    <CheckoutCartWrapper className="bg-white">
-      <h3 className="heading-6">sammary</h3>
-      <ul className="cart__list">
+    <CheckoutCartWrapper className="bg-white flex-col">
+      <h3 className="heading-6">summary</h3>
+      <ul className="cart__list flow flow-space--small">
         {cart.map((cartItem) => (
           <li key={cartItem.slug}>
             <div className="cart__item">
@@ -59,12 +59,7 @@ const CheckoutCart = () => {
           </p>
         </div>
       </div>
-      <Button
-        color={"primary"}
-        onClick={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-      >
+      <Button color={"primary"} type="submit">
         continue & pay
       </Button>
     </CheckoutCartWrapper>
