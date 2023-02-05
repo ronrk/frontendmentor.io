@@ -6,6 +6,7 @@ interface IProps {
   children: React.ReactNode;
   path: string;
   color: "primary" | "transparent" | "black";
+  onClick?: () => void;
 }
 interface IStyled {
   color: "primary" | "transparent" | "black";
@@ -39,7 +40,7 @@ const StyledLinkButton = styled(Link)<IStyled>`
   }
 `;
 
-const LinkButton: FC<IProps> = ({ children, path, color }) => {
+const LinkButton: FC<IProps> = ({ children, path, color, onClick }) => {
   const classNames = `${color} ${
     color === "primary"
       ? "text-white bg-primary"
@@ -49,7 +50,12 @@ const LinkButton: FC<IProps> = ({ children, path, color }) => {
   }`;
 
   return (
-    <StyledLinkButton href={path} color={color} className={classNames}>
+    <StyledLinkButton
+      href={path}
+      color={color}
+      className={classNames}
+      onClick={onClick}
+    >
       {children}
     </StyledLinkButton>
   );

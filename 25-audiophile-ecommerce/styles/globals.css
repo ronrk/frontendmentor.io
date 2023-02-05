@@ -141,10 +141,10 @@ img {
   background-color: hsl(var(--clr-white));
 }
 .bg-gray-light {
-  background-color: hsl(var(--clr-gray-light));
+  background-color: hsl(var(--clr-gray-light), 0.4);
 }
 .bg-gray {
-  background-color: hsl(var(--clr-gray));
+  background-color: hsl(var(--clr-gray), 0.7);
 }
 
 /* TYPOGRAPHY CLASSES */
@@ -233,7 +233,7 @@ img {
 
 .container {
   max-width: 85rem;
-  /* padding-inline: 2em; */
+  padding-inline: 4em;
   margin-inline: auto;
 }
 

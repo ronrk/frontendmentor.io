@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const HeroWrapper = styled.header`
   padding-block: 3rem 6rem;
-  & .container {
+  & .hero {
     display: grid;
     grid-template-columns: min-content 1fr;
 

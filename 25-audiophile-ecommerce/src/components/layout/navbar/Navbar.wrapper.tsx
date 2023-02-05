@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const NavbarWrapper = styled.nav`
   padding-block: 2rem;
+  position: relative;
   & .container {
     justify-content: space-between;
     align-items: center;

@@ -12,7 +12,7 @@ interface IStyled {
   color: "primary" | "transparent" | "black";
 }
 
-const StyledLinkButton = styled.button<IStyled>`
+const StyledButton = styled.button<IStyled>`
   padding: 1rem 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -40,7 +40,7 @@ const StyledLinkButton = styled.button<IStyled>`
   }
 `;
 
-const LinkButton: FC<IProps> = ({ children, onClick, color }) => {
+const Button: FC<IProps> = ({ children, onClick, color }) => {
   const classNames = `${color} ${
     color === "primary"
       ? "text-white bg-primary"
@@ -50,10 +50,10 @@ const LinkButton: FC<IProps> = ({ children, onClick, color }) => {
   }`;
 
   return (
-    <StyledLinkButton onClick={onClick} color={color} className={classNames}>
+    <StyledButton onClick={onClick} color={color} className={classNames}>
       {children}
-    </StyledLinkButton>
+    </StyledButton>
   );
 };
 
-export default LinkButton;
+export default Button;

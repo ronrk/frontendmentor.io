@@ -20,6 +20,7 @@ const SingleProductPage: FC<IProps> = ({ product }) => {
           description={product.description}
           price={product.price}
           categoryImage={product.categoryImage.desktop}
+          slug={product.slug}
         />
         <ProductFeatures
           features={product.features}
