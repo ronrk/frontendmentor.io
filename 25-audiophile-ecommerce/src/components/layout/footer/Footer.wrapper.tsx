@@ -3,41 +3,89 @@ import styled from "styled-components";
 const FooterWrapper = styled.footer`
   padding-block: 3rem;
   & .container {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: min-content;
+    grid-template-areas:
+      "logo navlinks"
+      "description social"
+      "copyright .";
   }
 
-  & .content {
-    max-width: 50%;
+  & .description {
+    grid-area: description;
   }
 
-  & .navs {
-    & .navlinks {
-      flex-grow: 0.5;
+  & .copyright {
+    grid-area: copyright;
+  }
 
-      & li {
-        & a {
+  & .social-nav {
+    grid-area: social;
+    align-self: end;
+    justify-self: end;
+    & a {
+      & svg {
+        & > * {
           transition: all 0.2s;
-          &:hover {
-            color: hsl(var(--clr-primary));
+        }
+      }
+      &:hover {
+        & svg {
+          & > * {
+            fill: hsl(var(--clr-primary));
           }
         }
       }
     }
-    & .social-nav {
-      align-self: end;
+  }
+
+  & .navlinks {
+    grid-area: navlinks;
+    justify-self: end;
+
+    & li {
       & a {
-        & svg {
-          & > * {
-            transition: all 0.2s;
-          }
-        }
+        transition: all 0.2s;
         &:hover {
-          & svg {
-            & > * {
-              fill: hsl(var(--clr-primary));
-            }
-          }
+          color: hsl(var(--clr-primary));
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & .container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "logo ."
+        "navlinks ."
+        "description ."
+        "copyright social";
+    }
+  }
+  @media screen and (max-width: 650px) {
+    & .container {
+      text-align: center;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "logo"
+        "navlinks"
+        "description"
+        "copyright"
+        "social";
+      align-items: center;
+      justify-items: center;
+    }
+    & .social-nav {
+      justify-self: center;
+    }
+
+    & .navlinks {
+      justify-self: center;
+      & ul {
+        flex-direction: column;
+        align-items: center;
       }
     }
   }

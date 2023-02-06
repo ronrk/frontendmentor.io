@@ -11,6 +11,7 @@ const Navbar = () => {
   return (
     <NavbarWrapper className="bg-black">
       <div className="container flex">
+        <button className="btn--mobileMenu text-white">HAM</button>
         <Logo />
         <ul className="flex">
           {navLinks.map((link, idx) => (
@@ -23,6 +24,7 @@ const Navbar = () => {
         </ul>
 
         <button
+          className="cart--btn"
           onClick={() => {
             if (isCartOpen) {
               closeCart();

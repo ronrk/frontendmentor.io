@@ -8,12 +8,10 @@ const HeroWrapper = styled.header`
 
     & .image__wrapper {
       width: 100%;
-      aspect-ratio: 2;
+      aspect-ratio: 1.5;
       z-index: 1;
       mix-blend-mode: difference;
-
-      & img {
-      }
+      justify-self: flex-end;
     }
     & .content {
       grid-row: 1/2;
@@ -25,6 +23,39 @@ const HeroWrapper = styled.header`
       & p {
         max-width: 40ch;
       }
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    & .hero {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-content: center;
+      & .image__wrapper {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 100%;
+        aspect-ratio: 1.5;
+        min-width: 100%;
+        justify-self: stretch;
+      }
+      & .content {
+        text-align: center;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        z-index: 222;
+        background-color: transparent;
+        align-items: center;
+
+        & p {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 530px) {
+    & .hero {
+      background-color: hsl(var(--clr-black));
     }
   }
 `;

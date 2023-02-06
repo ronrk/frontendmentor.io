@@ -9,11 +9,56 @@ const NavbarWrapper = styled.nav`
 
     & ul {
       --gap: 3rem;
+
+      & li {
+        & a:hover {
+          color: hsl(var(--clr-primary));
+        }
+      }
     }
   }
 
-  & .icon {
-    max-width: 50;
+  & .cart--btn:hover {
+    & .icon {
+      & > * {
+        fill: hsl(var(--clr-primary));
+      }
+    }
+  }
+
+  & .icon & .logo {
+    /* max-width: 50px; */
+    min-width: 100px;
+  }
+
+  & .btn--mobileMenu {
+    display: none;
+  }
+
+  @media screen and (max-width: 900px) {
+    & .btn--mobileMenu {
+      display: block;
+    }
+    & .container {
+      justify-content: space-between;
+      width: 100%;
+    }
+    & .logo {
+      /* flex-grow: 1; */
+      margin-right: auto;
+    }
+
+    & .cart--btn {
+      /* flex-grow: 1; */
+      /* justify-self: end; */
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    & ul {
+      display: none;
+    }
   }
 `;
 

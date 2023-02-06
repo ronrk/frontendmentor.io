@@ -23,7 +23,7 @@ const Hero = () => {
             </LinkButton>
           </div>
           <div className="image__wrapper">
-            <Image src={"/assets/home/desktop/image-hero.jpg"} alt={""} fill />
+            <Image src={"/assets/home/tablet/image-header.jpg"} alt={""} fill />
           </div>
         </div>
       </div>
