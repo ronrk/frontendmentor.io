@@ -9,6 +9,7 @@ interface IProps {
 const FormGroupWrapper = styled.div`
   flex-wrap: wrap;
   margin-bottom: 5rem;
+  --gap: 1rem;
 `;
 
 const FormGroup: FC<IProps> = ({ children, className }) => {

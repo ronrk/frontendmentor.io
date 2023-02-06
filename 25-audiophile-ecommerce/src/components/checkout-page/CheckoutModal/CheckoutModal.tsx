@@ -5,7 +5,7 @@ import LinkButton from "../../ui/LinkButton";
 import CheckoutModalWrapper from "./CheckoutModal.wrapper";
 
 const CheckoutModal = () => {
-  const { cart, totalPrice, toggleCheckoutModal } = useAppContext();
+  const { cart, totalPrice, toggleCheckoutModal, clearCart } = useAppContext();
 
   return (
     <CheckoutModalWrapper>
@@ -50,7 +50,14 @@ const CheckoutModal = () => {
             </h4>
           </div>
         </div>
-        <LinkButton path={"/"} color={"primary"} onClick={toggleCheckoutModal}>
+        <LinkButton
+          path={"/"}
+          color={"primary"}
+          onClick={() => {
+            clearCart();
+            toggleCheckoutModal();
+          }}
+        >
           back to home
         </LinkButton>
       </div>

@@ -1,32 +1,37 @@
-import React, { FC } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 import styled from "styled-components";
 
 interface IProps {
   value: string;
   type: string;
-  isError: boolean;
+  errorMsg: string;
   fullWidth?: boolean;
-  checkbox?: boolean;
   label: string;
   name: string;
-  onChange: (value: string) => void;
-  onBlur: () => void;
-  onFocus: () => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
+  required?: boolean;
+  pattern?: any;
 }
 
 const FormControlWrapper = styled.div`
   flex-basis: 47%;
-  --gap: 0.5em;
-  justify-content: space-between;
-  position: relative;
+  --gap: 0em;
+  justify-content: flex-start;
+  /* position: relative; */
+
+  & input:invalid.focused ~ .error-msg {
+    display: block;
+  }
 
   & .error-msg {
-    position: absolute;
+    display: none;
+
     color: red;
     font-weight: 500;
     font-size: var(--fs-200);
-    right: 2rem;
+    right: 0rem;
+    top: 5.5rem;
   }
 
   &.fullWidth {
@@ -58,9 +63,7 @@ const FormControlWrapper = styled.div`
 
       & input {
         appearance: none;
-        /* display: none; */
         border: 0;
-
         position: relative;
 
         &::before {
@@ -118,7 +121,7 @@ const FormControlWrapper = styled.div`
     &:focus {
       border-color: hsl(var(--clr-primary));
     }
-    &.error {
+    &:invalid.focused {
       border-color: red;
       border-width: 2px;
     }
@@ -127,38 +130,40 @@ const FormControlWrapper = styled.div`
 
 const FormControl: FC<IProps> = ({
   value,
-  isError,
+  required,
+  errorMsg,
   type,
   fullWidth,
-  checkbox,
   label,
   name,
   onChange,
-  onBlur,
-  onFocus,
   placeholder,
+  pattern,
 }) => {
-  let classes = `${"form-control flex-col"} ${fullWidth ? "fullWidth" : ""} ${
-    checkbox ? "checkbox" : ""
-  }`;
+  const [focused, setFocused] = useState(false);
+  let classes = `${"form-control flex-col"} ${fullWidth ? "fullWidth" : ""}`;
+
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    setFocused(true);
+  };
 
   return (
     <FormControlWrapper className={classes}>
-      {isError && <p className="error-msg">Invalid field</p>}
       <label htmlFor={name} className="fw-b text-black">
         {label}
       </label>
       <input
         value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onFocus={onFocus}
-        onBlur={onBlur}
+        onChange={onChange}
+        onBlur={handleFocus}
         type={type}
         name={name}
-        id={name}
         placeholder={placeholder}
-        className={isError ? "error" : ""}
+        className={`${errorMsg ? "error" : ""} ${focused ? "focused" : ""}`}
+        required={required}
+        pattern={pattern}
       />
+      {errorMsg && <p className="error-msg">{errorMsg}</p>}
     </FormControlWrapper>
   );
 };

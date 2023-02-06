@@ -1,183 +1,164 @@
 import CheckoutCart from "../src/components/checkout-page/CheckoutCart";
-import CheckoutForm from "../src/components/checkout-page/CheckoutForm/CheckoutForm";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useAppContext } from "../src/context/appContext";
-import useInput from "../src/hooks/use-input";
 import FormGroup from "../src/components/checkout-page/CheckoutForm/FormGroup";
 import FormControl from "../src/components/checkout-page/CheckoutForm/FormControl";
 import CheckboxControl from "../src/components/checkout-page/CheckoutForm/CheckboxControl";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import CheckoutModal from "../src/components/checkout-page/CheckoutModal/CheckoutModal";
 
 export type Payment = "cash" | "e-money";
 
-interface IFormError {
-  status: boolean;
-  msg: string;
+enum InputNames {
+  NAME = "name",
+  EMAIL = "email",
+  PHONE = "phone",
+  ADDRESS = "address",
+  ZIP = "zip",
+  CITY = "city",
+  COUNTRY = "country",
+  PIN = "pin",
+  NUMBER = "number",
 }
 
 const CheckoutPage = () => {
-  const [paymentMethod, setPaymentMethod] = useState<Payment | null>("e-money");
-  const [formError, setFormError] = useState<IFormError | null>({
-    status: true,
-    msg: "",
+  const [values, setValues] = useState({
+    [InputNames.NAME]: "",
+    [InputNames.EMAIL]: "",
+    [InputNames.ADDRESS]: "",
+    [InputNames.PHONE]: "",
+    [InputNames.ZIP]: "",
+    [InputNames.PIN]: "",
+    [InputNames.NUMBER]: "",
+    [InputNames.CITY]: "",
+    [InputNames.COUNTRY]: "",
   });
+  const [paymentMethod, setPaymentMethod] = useState<Payment | null>("e-money");
+
   const router = useRouter();
   const { toggleCheckoutModal, isCheckoutModal } = useAppContext();
-
-  const {
-    value: enteredName,
-    onBlur: onNameBlur,
-    onFocus: onNameFocus,
-    isError: isNameError,
-    handleChange: onNameChange,
-    isTouched: isNameTouched,
-  } = useInput((val) => val.trim() !== "");
-  const {
-    value: enteredEmail,
-    onBlur: onEmailBlur,
-    onFocus: onEmailFocus,
-    isError: isEmailError,
-    handleChange: onEmailChange,
-    isTouched: isEmailTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredPhone,
-    onBlur: onPhoneBlur,
-    onFocus: onPhoneFocus,
-    isError: isPhoneError,
-    handleChange: onPhoneChange,
-    isTouched: isPhoneTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredAddress,
-    onBlur: onAddressBlur,
-    onFocus: onAddressFocus,
-    isError: isAddressError,
-    handleChange: onAddressChange,
-    isTouched: isAddressTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredZIP,
-    onBlur: onZIPBlur,
-    onFocus: onZIPFocus,
-    isError: isZIPError,
-    handleChange: onZIPChange,
-    isTouched: isZIPTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredCity,
-    onBlur: onCityBlur,
-    onFocus: onCityFocus,
-    isError: isCityError,
-    handleChange: onCityChange,
-    isTouched: isCityTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredCountry,
-    onBlur: onCountryBlur,
-    onFocus: onCountryFocus,
-    isError: isCountryError,
-    handleChange: onCountryChange,
-    isTouched: isCountryTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredNumber,
-    onBlur: onNumberBlur,
-    onFocus: onNumberFocus,
-    isError: isNumberError,
-    handleChange: onNumberChange,
-    isTouched: isNumberTouched,
-  } = useInput((val) => val.trim() !== "");
-
-  const {
-    value: enteredPIN,
-    onBlur: onPINBlur,
-    onFocus: onPINFocus,
-    isError: isPINError,
-    handleChange: onPINChange,
-    isTouched: isPINTouched,
-  } = useInput((val) => val.trim() === "");
+  const inputsAddress = [
+    {
+      id: 1,
+      name: InputNames.NAME,
+      type: "text",
+      placeholder: "Alexei Ward",
+      errorMsg:
+        "Name should be 3-16 characters and shouldn't include any speciel cahracter",
+      label: "Name",
+      required: true,
+      pattern: "^[a-zA-Z_ ]{3,16}$",
+    },
+    {
+      id: 2,
+      name: InputNames.EMAIL,
+      type: "email",
+      placeholder: "alexei@gamil.com",
+      errorMsg: "It should be a valid Email",
+      label: "Email",
+      required: true,
+    },
+    {
+      id: 3,
+      name: InputNames.PHONE,
+      type: "text",
+      placeholder: "+ 1 202-555-0136",
+      errorMsg: "No a valid Phone number",
+      label: "Phone",
+      required: true,
+      pattern: "^[+][0-9]{3,}$",
+    },
+  ];
+  const inputInfo = [
+    {
+      id: 4,
+      name: InputNames.ADDRESS,
+      type: "text",
+      placeholder: "1137 Williams Avenue",
+      errorMsg: "Invalid Address",
+      label: "Address",
+      required: true,
+      pattern: "^[a-zA-Z0-9_ ]{3,}$",
+    },
+    {
+      id: 5,
+      name: InputNames.ZIP,
+      type: "text",
+      placeholder: "12345",
+      errorMsg: "ZIP invalid",
+      label: "ZIP",
+      required: true,
+      pattern: "^[0-9]{5,6}$",
+    },
+    {
+      id: 6,
+      name: InputNames.CITY,
+      type: "text",
+      placeholder: "New York",
+      errorMsg: "City Invalid",
+      label: "City",
+      required: true,
+      pattern: "^[a-zA-Z0-9_ ]{3,}$",
+    },
+    {
+      id: 7,
+      name: InputNames.COUNTRY,
+      type: "text",
+      placeholder: "United States",
+      errorMsg: "Country invalid",
+      label: "Country",
+      required: true,
+      pattern: "^[a-zA-Z0-9_ ]{3,}$",
+    },
+  ];
+  const inputEmoney = [
+    {
+      id: 8,
+      name: InputNames.NUMBER,
+      type: "text",
+      placeholder: "238521993",
+      errorMsg: "Wrong number format",
+      label: "e-Money Number",
+      required: paymentMethod === "e-money",
+      pattern: "^[0-9]{9,9}$",
+    },
+    {
+      id: 9,
+      name: InputNames.PIN,
+      type: "text",
+      placeholder: "6891",
+      errorMsg: "Not a Valid PIN",
+      label: "e-Money PIN",
+      required: paymentMethod === "e-money",
+      pattern: "^[0-9]{4,4}$",
+    },
+  ];
 
   const handleMethodChange = (newMethod: Payment) => {
     setPaymentMethod(newMethod);
   };
 
-  const handleError = (msg: string) => {
-    setFormError({ status: true, msg });
-
-    setTimeout(() => {
-      setFormError({ status: false, msg: "" });
-    }, 5000);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormError({ status: false, msg: "" });
-    if (
-      isNameError ||
-      isEmailError ||
-      isPhoneError ||
-      isAddressError ||
-      isZIPError ||
-      isCityError ||
-      isCountryError
-    ) {
-      handleError(
-        "One or more of your field are invalid, please check your inputs"
-      );
-
-      return;
-    } else if (paymentMethod === "e-money") {
-      if (isNumberError || isPINError) {
-        handleError("Something went wrong with your payment");
-        return;
-      }
-    }
-    onNameChange("");
-    onEmailChange("");
-    onPhoneChange("");
-    onAddressChange("");
-    onZIPChange("");
-    onCityChange("");
-    onCountryChange("");
-    onNumberChange("");
-    onPINChange("");
     toggleCheckoutModal();
   };
 
   let paymentContentEl: React.ReactNode =
     paymentMethod === "e-money" ? (
       <FormGroup className="flex">
-        <FormControl
-          value={enteredNumber}
-          type={"text"}
-          isError={isNumberError}
-          label={"e-Money Number"}
-          name={"number"}
-          onChange={onNumberChange}
-          placeholder={"238521993"}
-          onBlur={onNumberBlur}
-          onFocus={onNumberFocus}
-        />
-        <FormControl
-          value={enteredPIN}
-          type={"text"}
-          isError={isPINError}
-          label={"e-Money PIN"}
-          name={"number"}
-          onChange={onPINChange}
-          placeholder={"6891"}
-          onBlur={onPINBlur}
-          onFocus={onPINFocus}
-        />
+        {inputEmoney.map((input) => (
+          <FormControl
+            key={input.id}
+            value={values[input.name]}
+            {...input}
+            onChange={onChange}
+          />
+        ))}
       </FormGroup>
     ) : (
       <FormGroup className="cash-on flex">
@@ -202,93 +183,30 @@ const CheckoutPage = () => {
       <button onClick={() => router.back()} className="btn--back text-body">
         Go Back
       </button>
-      {formError && <p>{formError.msg}</p>}
       <form className="form" onSubmit={formSubmitHandler}>
         <div className="flow flow-space--small  bg-white">
           <h2 className="heading-2 text-black">Checkout</h2>
           <h5 className="heading-6 text-primary">billing address</h5>
           <FormGroup className="form-group flex ">
-            <FormControl
-              value={enteredName}
-              type={"text"}
-              isError={isNameError}
-              label={"Name"}
-              name={"name"}
-              onChange={onNameChange}
-              placeholder={"Alexei Ward"}
-              onBlur={onNameBlur}
-              onFocus={onNameFocus}
-            />
-            <FormControl
-              value={enteredEmail}
-              type={"email"}
-              isError={isEmailError}
-              label={"Email"}
-              name={"email"}
-              onChange={onEmailChange}
-              placeholder={"alexei@gmail.com"}
-              onBlur={onEmailBlur}
-              onFocus={onEmailFocus}
-            />
-            <FormControl
-              type={"text"}
-              name={"phone"}
-              value={enteredPhone}
-              isError={isPhoneError}
-              label={"Phone Number"}
-              onChange={onPhoneChange}
-              onBlur={onPhoneBlur}
-              onFocus={onPhoneFocus}
-              placeholder={"+ 1 202-555-0136"}
-            />
+            {inputsAddress.map((input) => (
+              <FormControl
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
           </FormGroup>
           <h5 className="heading-6 text-primary">shipping info</h5>
           <FormGroup className="form-group flex">
-            <FormControl
-              value={enteredAddress}
-              type={"text"}
-              isError={isAddressError}
-              label={"Address"}
-              name={"name"}
-              onChange={onAddressChange}
-              placeholder={"1137 Williams Avenue"}
-              onBlur={onAddressBlur}
-              onFocus={onAddressFocus}
-              fullWidth
-            />
-            <FormControl
-              value={enteredZIP}
-              type={"text"}
-              isError={isZIPError}
-              label={"ZIP"}
-              name={"zip"}
-              onChange={onZIPChange}
-              placeholder={"10001"}
-              onBlur={onZIPBlur}
-              onFocus={onZIPFocus}
-            />
-            <FormControl
-              type={"text"}
-              name={"city"}
-              value={enteredCity}
-              isError={isCityError}
-              label={"City"}
-              onChange={onCityChange}
-              onBlur={onCityBlur}
-              onFocus={onCityFocus}
-              placeholder={"New York"}
-            />
-            <FormControl
-              type={"text"}
-              name={"country"}
-              value={enteredCountry}
-              isError={isCountryError}
-              label={"Country"}
-              onChange={onCountryChange}
-              onBlur={onCountryBlur}
-              onFocus={onCountryFocus}
-              placeholder={"United States"}
-            />
+            {inputInfo.map((input) => (
+              <FormControl
+                key={input.id}
+                {...input}
+                onChange={onChange}
+                value={values[input.name]}
+              />
+            ))}
           </FormGroup>
           <h5 className="heading-6 text-primary">payment-details</h5>
           <FormGroup className="flow">
