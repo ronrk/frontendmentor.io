@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import React, { FC } from "react";
 import SingleProduct from "../../src/components/productspage/SingleProduct";
 import Categories from "../../src/components/shared/categories/Categories";
@@ -18,23 +19,30 @@ const ProductsPage: FC<IProps> = ({ products, category }) => {
     );
   }
   return (
-    <main>
-      <h2 className="categoryPage-title heading-3 text-white">{category}</h2>
-      <section className="container">
-        {products.map((product) => (
-          <SingleProduct
-            key={product.slug}
-            imageSrc={product.categoryImage.desktop}
-            name={product.name}
-            description={product.description}
-            slug={product.slug}
-            category={product.category}
-            newProduct={product.new}
-          />
-        ))}
-        <Categories />
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>
+          Audiophille | {category.slice(0, 1).toUpperCase() + category.slice(1)}
+        </title>
+      </Head>
+      <main>
+        <h2 className="categoryPage-title heading-3 text-white">{category}</h2>
+        <section className="container">
+          {products.map((product) => (
+            <SingleProduct
+              key={product.slug}
+              imageSrc={product.categoryImage.desktop}
+              name={product.name}
+              description={product.description}
+              slug={product.slug}
+              category={product.category}
+              newProduct={product.new}
+            />
+          ))}
+          <Categories />
+        </section>
+      </main>
+    </>
   );
 };
 

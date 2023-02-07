@@ -13,5 +13,12 @@ const ProductFeatureWrapper = styled.section`
       justify-content: flex-start;
     }
   }
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    align-self: flex-start;
+    & .features {
+      max-width: 100%;
+    }
+  }
 `;
 export default ProductFeatureWrapper;

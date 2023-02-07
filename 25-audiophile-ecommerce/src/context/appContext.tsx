@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  FormEvent,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { FC, useCallback, useContext, useEffect, useState } from "react";
 
 interface IProps {
   children: React.ReactNode;
@@ -29,6 +22,8 @@ interface IContextProps {
   clearCart: () => void;
   isCheckoutModal: boolean;
   toggleCheckoutModal: () => void;
+  toggleMenu: () => void;
+  isMenuOpen: boolean;
 }
 
 const initialState = {
@@ -42,6 +37,8 @@ const initialState = {
   clearCart: () => {},
   isCheckoutModal: false,
   toggleCheckoutModal: () => {},
+  toggleMenu: () => {},
+  isMenuOpen: false,
 };
 
 const AppContext = React.createContext<IContextProps>(initialState);
@@ -51,12 +48,16 @@ const AppContextProvider: FC<IProps> = ({ children }) => {
   const [cart, setCart] = useState<ICartItem[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isCheckoutModal, setIsCheckoutModal] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openCart = () => {
     setIsCartOpen(true);
   };
   const closeCart = () => {
     setIsCartOpen(false);
+  };
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   const updateTotalPrice = useCallback(() => {
@@ -128,6 +129,8 @@ const AppContextProvider: FC<IProps> = ({ children }) => {
     clearCart,
     toggleCheckoutModal,
     isCheckoutModal,
+    toggleMenu,
+    isMenuOpen,
   };
 
   return <AppContext.Provider value={appValue}>{children}</AppContext.Provider>;

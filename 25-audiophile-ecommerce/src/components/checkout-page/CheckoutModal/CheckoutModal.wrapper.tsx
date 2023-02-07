@@ -71,6 +71,17 @@ const CheckoutModalWrapper = styled.div`
       text-align: center;
     }
   }
+  @media screen and (max-width: 550px) {
+    & .cart {
+      flex-direction: column;
+      & .cart__item {
+        width: 100%;
+      }
+      & .cart__totals {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default CheckoutModalWrapper;

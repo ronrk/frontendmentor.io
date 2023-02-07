@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProductGalleryWrapper = styled.section`
   display: grid;
-  grid-template-columns: minmax(40%, 460px) minmax(60%, 640px);
+  grid-template-columns: minmax(40%, 360px) 1fr;
   gap: 2rem;
 
   & .image__wrapper {
@@ -31,6 +31,19 @@ const ProductGalleryWrapper = styled.section`
     }
 
     aspect-ratio: 2;
+  }
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .image__wrapper {
+      width: 100%;
+      /* aspect-ratio: 1.5; */
+      &:nth-child(2) {
+        align-self: center;
+      }
+    }
   }
 `;
 

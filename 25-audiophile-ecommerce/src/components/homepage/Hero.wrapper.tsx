@@ -40,6 +40,7 @@ const HeroWrapper = styled.header`
         justify-self: stretch;
       }
       & .content {
+        padding: 1rem;
         text-align: center;
         grid-column: 1/2;
         grid-row: 1/2;
@@ -51,11 +52,6 @@ const HeroWrapper = styled.header`
           max-width: 50%;
         }
       }
-    }
-  }
-  @media screen and (max-width: 530px) {
-    & .hero {
-      background-color: hsl(var(--clr-black));
     }
   }
 `;

@@ -7,6 +7,7 @@ import FormControl from "../src/components/checkout-page/CheckoutForm/FormContro
 import CheckboxControl from "../src/components/checkout-page/CheckoutForm/CheckboxControl";
 import { ChangeEvent, FormEvent, useState } from "react";
 import CheckoutModal from "../src/components/checkout-page/CheckoutModal/CheckoutModal";
+import Head from "next/head";
 
 export type Payment = "cash" | "e-money";
 
@@ -178,48 +179,54 @@ const CheckoutPage = () => {
     );
 
   return (
-    <main className="container checkout-page">
-      {isCheckoutModal && <CheckoutModal />}
-      <button onClick={() => router.back()} className="btn--back text-body">
-        Go Back
-      </button>
-      <form className="form" onSubmit={formSubmitHandler}>
-        <div className="flow flow-space--small  bg-white">
-          <h2 className="heading-2 text-black">Checkout</h2>
-          <h5 className="heading-6 text-primary">billing address</h5>
-          <FormGroup className="form-group flex ">
-            {inputsAddress.map((input) => (
-              <FormControl
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
+    <>
+      <Head>
+        <title>Audiophille | Checkout {">"} Pay</title>
+      </Head>
+
+      <main className="container checkout-page">
+        {isCheckoutModal && <CheckoutModal />}
+        <button onClick={() => router.back()} className="btn--back text-body">
+          Go Back
+        </button>
+        <form className="form" onSubmit={formSubmitHandler}>
+          <div className="flow flow-space--small  bg-white">
+            <h2 className="heading-2 text-black">Checkout</h2>
+            <h5 className="heading-6 text-primary">billing address</h5>
+            <FormGroup className="form-group flex ">
+              {inputsAddress.map((input) => (
+                <FormControl
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                />
+              ))}
+            </FormGroup>
+            <h5 className="heading-6 text-primary">shipping info</h5>
+            <FormGroup className="form-group flex">
+              {inputInfo.map((input) => (
+                <FormControl
+                  key={input.id}
+                  {...input}
+                  onChange={onChange}
+                  value={values[input.name]}
+                />
+              ))}
+            </FormGroup>
+            <h5 className="heading-6 text-primary">payment-details</h5>
+            <FormGroup className="flow">
+              <CheckboxControl
+                onChange={handleMethodChange}
+                paymentMethod={paymentMethod}
               />
-            ))}
-          </FormGroup>
-          <h5 className="heading-6 text-primary">shipping info</h5>
-          <FormGroup className="form-group flex">
-            {inputInfo.map((input) => (
-              <FormControl
-                key={input.id}
-                {...input}
-                onChange={onChange}
-                value={values[input.name]}
-              />
-            ))}
-          </FormGroup>
-          <h5 className="heading-6 text-primary">payment-details</h5>
-          <FormGroup className="flow">
-            <CheckboxControl
-              onChange={handleMethodChange}
-              paymentMethod={paymentMethod}
-            />
-            {paymentContentEl}
-          </FormGroup>
-        </div>
-        <CheckoutCart />
-      </form>
-    </main>
+              {paymentContentEl}
+            </FormGroup>
+          </div>
+          <CheckoutCart />
+        </form>
+      </main>
+    </>
   );
 };
 

@@ -30,6 +30,25 @@ const ProductHeaderWrapper = styled.header`
       }
     }
   }
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    align-items: center;
+    --gap: 1rem;
+    margin-block: 2rem 5rem;
+    & .image__wrapper {
+      width: 60%;
+      aspect-ratio: 1;
+    }
+    & .content {
+      max-width: 100%;
+      --flow-space: 1rem;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    & .actions {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default ProductHeaderWrapper;

@@ -101,6 +101,9 @@ const CheckboxControlWrapper = styled.div`
   &.fullWidth {
     min-width: 100%;
   }
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
 `;
 
 const CheckboxControl: FC<IProps> = ({ onChange, paymentMethod }) => {

@@ -83,28 +83,30 @@ const CartMenu: FC<IProps> = ({}) => {
 
   return (
     <CartMenuWrapper className="text-black">
-      <div className="cart bg-white flex-col flow" ref={divEl}>
-        <div className="cart__header flex">
-          <h4 className="heading-5">cart ({cart.length})</h4>
-          <button className="text-body text-black-light" onClick={clearCart}>
-            Remove all
-          </button>
-        </div>
-        {content}
+      <div className="container">
+        <div className="cart bg-white flex-col flow" ref={divEl}>
+          <div className="cart__header flex">
+            <h4 className="heading-5">cart ({cart.length})</h4>
+            <button className="text-body text-black-light" onClick={clearCart}>
+              Remove all
+            </button>
+          </div>
+          {content}
 
-        <div className="cart__price flex">
-          <h4 className="heading-6 text-black-light">total</h4>
-          <p className="heading-5">${totalPrice.toLocaleString()}</p>
+          <div className="cart__price flex">
+            <h4 className="heading-6 text-black-light">total</h4>
+            <p className="heading-5">${totalPrice.toLocaleString()}</p>
+          </div>
+          {cart.length > 0 && (
+            <LinkButton
+              path={"/checkout"}
+              color={"primary"}
+              onClick={() => closeCart()}
+            >
+              checkout
+            </LinkButton>
+          )}
         </div>
-        {cart.length > 0 && (
-          <LinkButton
-            path={"/checkout"}
-            color={"primary"}
-            onClick={() => closeCart()}
-          >
-            checkout
-          </LinkButton>
-        )}
       </div>
     </CartMenuWrapper>
   );

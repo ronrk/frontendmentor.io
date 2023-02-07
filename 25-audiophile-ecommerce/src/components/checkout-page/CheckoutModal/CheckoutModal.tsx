@@ -36,7 +36,7 @@ const CheckoutModal = () => {
                   </div>
                   <div className="item-info">
                     <h3>{cartItem.name}</h3>
-                    <p>{Number(cartItem.price.toFixed(2)).toLocaleString()}</p>
+                    <p>${Number(cartItem.price.toFixed(2)).toLocaleString()}</p>
                   </div>
                   <p className="quantity">X{cartItem.quantity}</p>
                 </div>

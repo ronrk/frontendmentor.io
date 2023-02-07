@@ -4,7 +4,7 @@ const FooterWrapper = styled.footer`
   padding-block: 3rem;
   & .container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 1fr%;
     grid-auto-rows: min-content;
     grid-template-areas:
       "logo navlinks"

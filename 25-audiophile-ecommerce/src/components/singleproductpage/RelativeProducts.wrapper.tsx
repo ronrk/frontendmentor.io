@@ -13,6 +13,10 @@ const RelativeProductsWrapper = styled.section`
       aspect-ratio: 1;
     }
   }
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default RelativeProductsWrapper;

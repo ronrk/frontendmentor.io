@@ -23,6 +23,9 @@ const CheckoutCartWrapper = styled.aside`
     justify-content: space-between;
     align-items: center;
   }
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export default CheckoutCartWrapper;

@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import React, { FC } from "react";
 import Categories from "../../src/components/shared/categories/Categories";
 import ProductFeatures from "../../src/components/singleproductpage/ProductFeatures";
@@ -13,24 +14,30 @@ interface IProps {
 
 const SingleProductPage: FC<IProps> = ({ product }) => {
   return (
-    <main>
-      <div className="container flow flow-space--big">
-        <ProductHeader
-          name={product.name}
-          description={product.description}
-          price={product.price}
-          categoryImage={product.categoryImage.desktop}
-          slug={product.slug}
-        />
-        <ProductFeatures
-          features={product.features}
-          includes={product.includes}
-        />
-        <ProductGallery gallery={product.gallery} name={product.name} />
-        <RelativeProducts otherProducts={product.others} />
-        <Categories />
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Audiophille | {product.name}</title>
+      </Head>
+
+      <main>
+        <div className="container flow flow-space--big">
+          <ProductHeader
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            categoryImage={product.categoryImage.desktop}
+            slug={product.slug}
+          />
+          <ProductFeatures
+            features={product.features}
+            includes={product.includes}
+          />
+          <ProductGallery gallery={product.gallery} name={product.name} />
+          <RelativeProducts otherProducts={product.others} />
+          <Categories />
+        </div>
+      </main>
+    </>
   );
 };
 

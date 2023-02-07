@@ -25,7 +25,7 @@ const categoriesList = [
 
 const Categories = () => {
   return (
-    <CategoriesWrapper>
+    <CategoriesWrapper className="container categories">
       <ul className="flex">
         {categoriesList.map((item, idx) => (
           <Category {...item} key={idx} />

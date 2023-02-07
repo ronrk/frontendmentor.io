@@ -9,11 +9,14 @@ const CartDropdownWrapper = styled.div`
   left: 0;
   right: 0;
   min-height: 100vh;
+  & .container {
+    position: relative;
+  }
   & .cart {
     border-radius: 8px;
     box-shadow: 2px 2px 45px hsla(var(--clr-black), 0.2);
     position: absolute;
-    right: 17vw;
+    right: 0vw;
     top: 8rem;
     min-height: 250px;
     min-width: 250px;
